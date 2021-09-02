@@ -1,9 +1,6 @@
 //create variables for form input
-// function getWorkOutInput() {
 
-//     var WorkOutValue = document.getElementById("generateBtn");
-
-// }
+//listen for form submit
 $( "#workOutBtn" ).click(function() {
     const settings = {
         "async": true,
@@ -12,7 +9,7 @@ $( "#workOutBtn" ).click(function() {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-            "x-rapidapi-key": "cc91c1ac69mshaa10f9c0fe00529p1d6942jsn7ba7e69d7ebb"
+            "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
         }
     };
     
@@ -20,19 +17,19 @@ $( "#workOutBtn" ).click(function() {
         console.log(response);
     });
   });
-
-
   
 
 $( "#nutriBtn" ).click(function() {
+
+    
     const settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=1&tags=vegetarian%2Cdessert",
+        "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=day&targetCalories=2000&diet=vegetarian&exclude=shellfish%2C%20olives",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-            "x-rapidapi-key": "cc91c1ac69mshaa10f9c0fe00529p1d6942jsn7ba7e69d7ebb"
+            "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
         }
     };
     
@@ -40,7 +37,7 @@ $( "#nutriBtn" ).click(function() {
         console.log(response);
     });
 });    
-//listen for form submit
+
 
 
 
