@@ -1,11 +1,23 @@
-//create variables for form input
+// create variables for form input
+var upperLegs = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/upper%20legs';
+var waist = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/waist';
+var lowerLegs = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/lower%20legs';
+var back = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/back';
+var neck = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/neck';
+var chest = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest';
+var cardio = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/cardio';
+var shoulders = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/shoulders';
+
+// waist (i = 0, i < 5, i++)
+
+
 
 //listen for form submit
 $( "#workOutBtn" ).click(function() {
     const settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://exercisedb.p.rapidapi.com/exercises/equipment/body%20weight",
+        "url": waist, //"https://exercisedb.p.rapidapi.com/exercises/equipment/body%20weight",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "exercisedb.p.rapidapi.com",
