@@ -24,9 +24,28 @@
         <!--Form-->
             <div class="col form-space">
                 <div class="form">
-                    <form action="">
+                    <!--Form for workout-->
+                    <form action="" class="workout">
+                        <div>
+                            <label for="body-part">Pick the body part you'd like to target this week:</label>
+                            <select name="body-part" id="">
+                                <option value="" disabled selected>Pick a body part to workout</option>
+                                <option value="waist">Waist</option>
+                            </select>
+                        </div>
+                        <div>
                         <button class="workOutBtn" id="workOutBtn">Generate Workout</button>
+                        </div>
+                    </form>
+                    <!--Form for nutrition-->
+                    <form action="" class="nutrition">
+                        <div>
+                            <label for="calories">Input your calorie goal:</label>
+                            <input name="calories" type="text" placeholder="Calorie Goal">
+                        </div>
+                        <div>
                         <button class="nutriBtn" id="nutriBtn">Generate Nutrition</button>
+                        </div>
                     </form>
                 </div>
             </div>
