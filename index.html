@@ -4,17 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Git N Shape</title>
 </head>
 <body>
+    <!-- NOTE FOR TAYLOR - you will want to change class types from the 
+        css api you use to create columns, rows, and other styles. This
+        is a basic layout so we know what to grab in the script
+        MAKE SURE TO CHECK THE SCRIPT BEFORE REMOVING ANY CLASS NAMES
+        (we might be using some of those) message us if you have questions  -->
+    <!--Navbar-->
+    <nav>
+        <div class="logo"></div>
+        <div class="brand-name"></div>
+    </nav>
 
+    <main>
+        <!--Overall container-->
+        <div class="container">
+        <!--Form-->
+            <div class="col form-space">
+                <div class="form">
+                    <!--Form for workout-->
+                    <form action="" class="workout">
+                        <div>
+                            <label for="body-part">Pick the body part you'd like to target this week:</label>
+                            <select name="body-part" id="">
+                                <option value="" disabled selected>Pick a body part to workout</option>
+                                <option value="waist">Waist</option>
+                            </select>
+                        </div>
+                        <div>
+                        <button class="workOutBtn" id="workOutBtn">Generate Workout</button>
+                        </div>
+                    </form>
+                    <!--Form for nutrition-->
+                    <form action="" class="nutrition">
+                        <div>
+                            <label for="calories">Input your calorie goal:</label>
+                            <input name="calories" type="text" placeholder="Calorie Goal">
+                        </div>
+                        <div>
+                        <button class="nutriBtn" id="nutriBtn">Generate Nutrition</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Space where all the data goes -->
+            <div class="col data-space">
+                <!-- Space for the workout plan -->
+                <div class="row weekly-workout">
+                    <!--DAILY COLOUMNS WILL BE CREATED AND PUT HERE
+                    IN JAVASCRIPT-->
+                </div>
+                <!-- Space for the nutrition plan -->
+                <div class="row weekly-nutrition">
+                    <!--DAILY COLOUMNS WILL BE CREATED AND PUT HERE
+                    IN JAVASCRIPT-->
+                </div>
+                <!-- Save button space -->
+                <div class="row save-btn">
+                </div>
+            </div>
+        </div>
+    </main>
 
-
-    <button class="workOutBtn" id="workOutBtn">Generate Workout</button>
-    <button class="nutriBtn" id="nutriBtn">Generate Nutrition</button>
+    
     <div id="textBox">Text</div>
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src="assets/scripts/script.js"></script>
-   
 </body>
 </html>
