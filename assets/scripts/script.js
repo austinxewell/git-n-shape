@@ -148,26 +148,35 @@ startPage();
 
 
   
-  
 
-// $( "#nutriBtn" ).click(function() {
 
+$( "#nutriBtn" ).click(function() {
+    var numberRecipe = 21;
     
-//     const settings = {
-//         "async": true,
-//         "crossDomain": true,
-//         "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=2000&exclude=shellfish%2C%20olives",
-//         "method": "GET",
-//         "headers": {
-//             "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-//             "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-//         }
-//     };
+    const settings = {
+
+        "url": `https://api.spoonacular.com/recipes/complexSearch?query=paleo&number=${numberRecipe}&addRecipeInformation=true&addRecipeNutrition=true&apiKey=21fc282010dd4a55b9f7abe8cc4b3058`,
+        "method": "GET",
+
+    };
     
-//     $.ajax(settings).done(function (response) {
-//         console.log(response);
-//     });
-// });    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+        for (var i = 0; i < 5; i++) {
+            // generate random number to identify make recipe selection random
+        var randomRecipe = Math.floor(Math.random() * numberRecipe);
+
+            // store title recipe inside variable
+            var recipeTitle = response.results[randomRecipe].title
+            // create card for this recipe
+
+            // add recipe title to card title
+            
+            // append card to HTML
+             console.log(recipeTitle)
+        }
+    });
+});    
 
 
 
