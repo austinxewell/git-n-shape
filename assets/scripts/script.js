@@ -10,7 +10,7 @@ var shoulders = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/shoulders'
 
 // create variables for Recipe-Food-Nutrition
 // (i=0, i<5, i++)
-
+// testing
 
 //5 upper legs workouts
 function startPage() {
@@ -145,27 +145,6 @@ for (i = 0; i < 5; i++) {
 
 
 startPage();
-
-
-
-
- //listen for form submit
-// $( "#workOutBtn" ).click(function() {
-//     const settings = {
-//         "async": true,
-//         "crossDomain": true,
-//         "url": waist,
-//         "method": "GET",
-//         "headers": {
-//             "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-//             "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-//         }
-//     };
-    
-//     $.ajax(settings).done(function (response) {
-//         console.log(response);
-//     });
-//   });
 
 
   
