@@ -4,9 +4,115 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Git N Shape</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- NOTE FOR TAYLOR - you will want to change class types from the 
+        css api you use to create columns, rows, and other styles. This
+        is a basic layout so we know what to grab in the script
+        MAKE SURE TO CHECK THE SCRIPT BEFORE REMOVING ANY CLASS NAMES
+        (we might be using some of those) message us if you have questions  -->
+
+    <!--Navbar-->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+        <a class="navbar-item" href="./index.html">
+            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+        </a>
+        
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        </div>
     
+        <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item">
+            Home
+            </a>
+    
+            <a class="navbar-item">
+            About
+            </a>
+    
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+            <div class="buttons">
+                <a class="button is-primary">
+                <strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                Log in
+                </a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <!--Overall container-->
+    <main class="container mt-5">
+        <!-- set main columns -->
+        <div class="columns is-3-widescreen">
+            <!--Form column -->
+            <section class="column box is-one-quarter form-space p-5">
+                <div class="form">
+                    <!-- Form Header -->
+                    <div class="container">
+                        <h1 class="title">We'll handle the hard stuff.</h1>
+                        <h2 class="subtitle mb-5">Generate a weekly plan here:</h2>
+                    </div>
+                    <!--Form for workout-->
+                    <form action="" class="workout field mb-5">
+                        <label class="label" for="body-part">Target a body part:</label>
+                        <div class="control mb-3">
+                            <div class="select is-rounded is-primary">
+                                <select name="body-part" id="">
+                                    <option value="" disabled selected>Full Body</option>
+                                    <option value="waist">Waist</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="workOutBtn button is-primary" id="workOutBtn">Generate Workout</button>
+                    </form>
+                    <!--Form for nutrition-->
+                    <form action="" class="nutrition field">
+                        <label class="label" for="calories">Set your calorie goal:</label>
+                        <div class="control mb-3">
+                            <input class="input is-rounded is-primary" name="calories" type="text" placeholder="2,000">
+                        </div>
+                        <button class="nutriBtn button is-primary" id="nutriBtn">Generate Nutrition</button>
+                    </form>
+                </div>
+            </section>
+            <!-- column where all the data goes -->
+            <section class="column box ml-3 data-space">
+                <!-- Space for the workout plan -->
+                <div class="row weekly-workout">
+                    <!--DAILY COLOUMNS WILL BE CREATED AND PUT HERE
+                    IN JAVASCRIPT-->
+                </div>
+                <!-- Space for the nutrition plan -->
+                <div class="row weekly-nutrition">
+                    <!--DAILY COLOUMNS WILL BE CREATED AND PUT HERE
+                    IN JAVASCRIPT-->
+                </div>
+                <!-- Save button space -->
+                <div class="row save-btn">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="textBox">Text</div>
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="assets/scripts/script.js"></script>
 </body>
 </html>
