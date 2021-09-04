@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git N Shape</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <!-- NOTE FOR TAYLOR - you will want to change class types from the 
@@ -13,6 +14,7 @@
         is a basic layout so we know what to grab in the script
         MAKE SURE TO CHECK THE SCRIPT BEFORE REMOVING ANY CLASS NAMES
         (we might be using some of those) message us if you have questions  -->
+
     <!--Navbar-->
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
@@ -54,39 +56,42 @@
         </div>
     </nav>
 
-    <main>
+    <main class="container mt-5">
         <!--Overall container-->
-        <div class="container">
+        <div class="columns is-3-widescreen">
         <!--Form-->
-            <div class="col form-space">
+            <section class="column box is-one-quarter form-space">
                 <div class="form">
+                    <!-- Form Header -->
+                    <div class="container">
+                        <h1 class="title">We'll handle the hard stuff.</h1>
+                        <h2 class="subtitle mb-5">Generate a weekly plan here:</h2>
+                    </div>
                     <!--Form for workout-->
-                    <form action="" class="workout">
-                        <div>
-                            <label for="body-part">Pick the body part you'd like to target this week:</label>
-                            <select name="body-part" id="">
-                                <option value="" disabled selected>Pick a body part to workout</option>
-                                <option value="waist">Waist</option>
-                            </select>
+                    <form action="" class="workout field mb-6">
+                        <label class="label" for="body-part">Target a body part:</label>
+                        <div class="control mb-3">
+                            <div class="select is-rounded is-primary">
+                                <select name="body-part" id="">
+                                    <option value="" disabled selected>Full Body</option>
+                                    <option value="waist">Waist</option>
+                                </select>
+                            </div>
                         </div>
-                        <div>
-                        <button class="workOutBtn" id="workOutBtn">Generate Workout</button>
-                        </div>
+                        <button class="workOutBtn button is-primary" id="workOutBtn">Generate Workout</button>
                     </form>
                     <!--Form for nutrition-->
-                    <form action="" class="nutrition">
-                        <div>
-                            <label for="calories">Input your calorie goal:</label>
-                            <input name="calories" type="text" placeholder="Calorie Goal">
+                    <form action="" class="nutrition field">
+                        <label class="label" for="calories">Set your calorie goal:</label>
+                        <div class="control mb-3">
+                            <input class="input is-rounded is-primary" name="calories" type="text" placeholder="2,000">
                         </div>
-                        <div>
-                        <button class="nutriBtn" id="nutriBtn">Generate Nutrition</button>
-                        </div>
+                        <button class="nutriBtn button is-primary" id="nutriBtn">Generate Nutrition</button>
                     </form>
                 </div>
-            </div>
+            </section>
             <!-- Space where all the data goes -->
-            <div class="col data-space">
+            <section class="column box data-space">
                 <!-- Space for the workout plan -->
                 <div class="row weekly-workout">
                     <!--DAILY COLOUMNS WILL BE CREATED AND PUT HERE
@@ -100,7 +105,7 @@
                 <!-- Save button space -->
                 <div class="row save-btn">
                 </div>
-            </div>
+            </section>
         </div>
     </main>
 
