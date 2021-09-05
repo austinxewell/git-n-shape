@@ -230,10 +230,13 @@ $("#nutriBtn").click(function () {
                     mealName.textContent='Dinner:'
                     docEl.appendChild(mealName);
                 }
+                //append random recipe as a link
                 actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
                 docEl.appendChild(containerNut);
+                //increase placement counter to move to next column
                 placement++
             } else if (placement == 1) {
                 var containerNut = document.createElement('div');
@@ -254,6 +257,7 @@ $("#nutriBtn").click(function () {
                     docEl.appendChild(mealName);
                 }
                 actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
                 docEl.appendChild(containerNut);
@@ -278,6 +282,7 @@ $("#nutriBtn").click(function () {
                     docEl.appendChild(mealName);
                 }
                 actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
                 docEl.appendChild(containerNut);
@@ -302,6 +307,7 @@ $("#nutriBtn").click(function () {
                     docEl.appendChild(mealName);
                 }
                 actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
                 docEl.appendChild(containerNut);
@@ -326,6 +332,7 @@ $("#nutriBtn").click(function () {
                     docEl.appendChild(mealName);
                 }
                 actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
                 docEl.appendChild(containerNut);
@@ -350,6 +357,7 @@ $("#nutriBtn").click(function () {
                     docEl.appendChild(mealName);
                 }
                 actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
                 docEl.appendChild(containerNut);
@@ -374,10 +382,13 @@ $("#nutriBtn").click(function () {
                     docEl.appendChild(mealName);
                 }
                 actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
                 docEl.appendChild(containerNut);
+                //reset placement counter to go back to first coloumn
                 placement = 0;
+                //increase meal type so next set of recipies fall under the next meal type
                 mealType++;
                 
             }
