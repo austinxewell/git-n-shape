@@ -208,6 +208,7 @@ $("#nutriBtn").click(function () {
         var recipes = response.recipes;
         console.log(recipes);
         var placement = 0;
+        var mealType = 0;
         for(var i = 0; i < recipes.length; i++){
             var title = recipes[i].title;
             var recipeLink = recipes[i].sourceUrl;
@@ -215,6 +216,20 @@ $("#nutriBtn").click(function () {
                 var containerNut = document.createElement('div');
                 var actualRecipe = document.createElement('a');
                 var docEl = document.querySelector('#n-1');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
                 actualRecipe.setAttribute('href', recipeLink);
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
@@ -224,6 +239,20 @@ $("#nutriBtn").click(function () {
                 var containerNut = document.createElement('div');
                 var actualRecipe = document.createElement('a');
                 var docEl = document.querySelector('#n-2');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
                 actualRecipe.setAttribute('href', recipeLink);
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
@@ -234,6 +263,20 @@ $("#nutriBtn").click(function () {
                 var containerNut = document.createElement('div');
                 var actualRecipe = document.createElement('a');
                 var docEl = document.querySelector('#n-3');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
                 actualRecipe.setAttribute('href', recipeLink);
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
@@ -244,6 +287,20 @@ $("#nutriBtn").click(function () {
                 var containerNut = document.createElement('div');
                 var actualRecipe = document.createElement('a');
                 var docEl = document.querySelector('#n-4');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
                 actualRecipe.setAttribute('href', recipeLink);
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
@@ -254,6 +311,20 @@ $("#nutriBtn").click(function () {
                 var containerNut = document.createElement('div');
                 var actualRecipe = document.createElement('a');
                 var docEl = document.querySelector('#n-5');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
                 actualRecipe.setAttribute('href', recipeLink);
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
@@ -264,6 +335,20 @@ $("#nutriBtn").click(function () {
                 var containerNut = document.createElement('div');
                 var actualRecipe = document.createElement('a');
                 var docEl = document.querySelector('#n-6');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
                 actualRecipe.setAttribute('href', recipeLink);
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
@@ -274,11 +359,26 @@ $("#nutriBtn").click(function () {
                 var containerNut = document.createElement('div');
                 var actualRecipe = document.createElement('a');
                 var docEl = document.querySelector('#n-7');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
                 actualRecipe.setAttribute('href', recipeLink);
                 actualRecipe.textContent = title;
                 containerNut.appendChild(actualRecipe);
                 docEl.appendChild(containerNut);
-                placement = placement - 6;
+                placement = 0;
+                mealType++;
                 
             }
         }
