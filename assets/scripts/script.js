@@ -189,36 +189,102 @@ var calorieInput = document.getElementById("#calories")
     // get calorie value
     var calorieInput = document.getElementById("#calories")
 
-    $("#nutriBtn").submit(function () {
+$("#nutriBtn").click(function () {
 
         // var calories = calorieInput
-        var numberRecipe = 21;
 
-        const settings = {
+    const settings = {
 
-            "url": `https://api.spoonacular.com/recipes/complexSearch?query=paleo&number=${numberRecipe}&addRecipeInformation=true&addRecipeNutrition=true&apiKey=21fc282010dd4a55b9f7abe8cc4b3058`,
-            "method": "GET",
+        "url": `https://api.spoonacular.com/recipes/random?number=21&addRecipeInformation=true&addRecipeNutrition=true&apiKey=21fc282010dd4a55b9f7abe8cc4b3058`,
+        "method": "GET",
 
-        };
+    };
 
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-            for (var i = 0; i < 5; i++) {
-                // generate random number to identify make recipe selection random
-                var randomRecipe = Math.floor(Math.random() * numberRecipe);
-
-                // store title recipe inside variable
-                // var recipeTitle = response.results[randomRecipe].title
-                var recipeTitle = response.results[randomRecipe].nutrition.nutrients[0].amount
-                // create card for this recipe
-
-                // add recipe title to card title
-
-                // append card to HTML
-                console.log(recipeTitle)
-            }
+    $.ajax(settings).then(function (response) {
+        var eachDayNutEl = document.querySelectorAll('.recipeInput');
+        eachDayNutEl.forEach(element => {
+            element.innerHTML='';
         });
+        var recipes = response.recipes;
+        console.log(recipes);
+        var placement = 0;
+        for(var i = 0; i < recipes.length; i++){
+            var title = recipes[i].title;
+            var recipeLink = recipes[i].sourceUrl;
+            if(placement == 0){
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-1');
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                placement++
+            } else if (placement == 1) {
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-2');
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                placement++
+
+            } else if (placement == 2) {
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-3');
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                placement++
+                
+            } else if (placement == 3) {
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-4');
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                placement++
+                
+            } else if (placement == 4) {
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-5');
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                placement++
+                
+            } else if (placement == 5) {
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-6');
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                placement++
+            
+            } else if (placement == 6) {
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-7');
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                placement = placement - 6;
+                
+            }
+        }
+        
     });
+});
 
     // bulma logic for mobile navbar toggle animation
     document.addEventListener('DOMContentLoaded', () => {
