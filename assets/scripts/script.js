@@ -244,7 +244,7 @@ $( "#nutriBtn" ).submit(function() {
             // add recipe title to card title
             
             // append card to HTML
-             console.log(recipeTitle)
+            console.log(recipeTitle)
         }
     });
 });    
