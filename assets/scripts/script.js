@@ -63,7 +63,18 @@ for (i = 0; i < 5; i++) {
         "headers": {
             "x-rapidapi-host": "exercisedb.p.rapidapi.com",
             "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
+<<<<<<< HEAD
         }};
+=======
+        }
+    };
+    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+});
+
+>>>>>>> 80f7a18787ebb266915e36b78793ec7a9e806a05
 
         $.ajax(settings).done(function (response) {
         console.log(response[i]);
@@ -202,7 +213,66 @@ $( "#nutriBtn" ).submit(function() {
     });
 });    
 
+// bulma logic for mobile navbar toggle animation
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+            });
+        });
+    }
+});
 
 
+
+
+// get calorie value
+var calorieInput = document.getElementById("#calories")
+
+$( "#nutriBtn" ).submit(function() {
+    // var calories = calorieInput
+    var numberRecipe = 21;
+    
+    const settings = {
+
+        "url": `https://api.spoonacular.com/recipes/complexSearch?query=paleo&number=${numberRecipe}&addRecipeInformation=true&addRecipeNutrition=true&apiKey=21fc282010dd4a55b9f7abe8cc4b3058`,
+        "method": "GET",
+
+    };
+    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+        for (var i = 0; i < 5; i++) {
+            // generate random number to identify make recipe selection random
+        var randomRecipe = Math.floor(Math.random() * numberRecipe);
+
+            // store title recipe inside variable
+            // var recipeTitle = response.results[randomRecipe].title
+            var recipeTitle = response.results[randomRecipe].nutrition.nutrients[0].amount
+            // create card for this recipe
+
+            // add recipe title to card title
+            
+            // append card to HTML
+             console.log(recipeTitle)
+        }
+    });
+});    
 
 //fetch data from APIs using for input
