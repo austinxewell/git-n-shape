@@ -15,7 +15,6 @@ var workoutCard = document.createElement('div');
 //5 upper legs workouts
 function startPage() {
     $("#workOutBtn").on('click', (function () {
-        event.preventDefault();
         for (i = 0; i < 5; i++) {
             const settings = {
                 "async": true,
@@ -163,7 +162,7 @@ function startPage() {
     )};
 
 
-  
+startPage();
 // get calorie value
 var calorieInput = document.getElementById("#calories")
 
@@ -191,6 +190,7 @@ var calorieInput = document.getElementById("#calories")
     var calorieInput = document.getElementById("#calories")
 
     $("#nutriBtn").submit(function () {
+
         // var calories = calorieInput
         var numberRecipe = 21;
 
