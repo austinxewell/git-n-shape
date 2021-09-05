@@ -4,9 +4,9 @@
     --color-tertiary: #00233A;
 }
 #slider {
-    height: 70vh;
+    height: 100vh;
     width: 100%;
-    background: linear-gradient(to left, #00947E, #00D1B2);
+    background: linear-gradient(to top, white, #00947E);
     position: absolute;
     top: 0;
     left: 0;
