@@ -7,10 +7,10 @@ var cardio = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/cardio';
 var chest = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest';
 var shoulders = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/shoulders';
 
+// DOM elements
+var workoutContainerEl = document.querySelector('#weekly-workout');
+var workoutCard = document.createElement('div');
 
-// create variables for Recipe-Food-Nutrition
-// (i=0, i<5, i++)
-// testing
 
 //5 upper legs workouts
 function startPage() {
@@ -30,6 +30,11 @@ function startPage() {
             console.log(response[i]);
             });
             // append to dom element
+    
+            // workoutContainerEl.innerHTML = '';
+            // workoutCard.setAttribute(response[0]);
+            // workoutContainerEl.appendChild(workoutCard);
+
 
 
         
