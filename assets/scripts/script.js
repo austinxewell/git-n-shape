@@ -169,9 +169,11 @@ startPage();
 
 
   
+// get calorie value
+var calorieInput = document.getElementById("#calories")
 
-
-$( "#nutriBtn" ).click(function() {
+$( "#nutriBtn" ).submit(function() {
+    // var calories = calorieInput
     var numberRecipe = 21;
     
     const settings = {
@@ -188,7 +190,8 @@ $( "#nutriBtn" ).click(function() {
         var randomRecipe = Math.floor(Math.random() * numberRecipe);
 
             // store title recipe inside variable
-            var recipeTitle = response.results[randomRecipe].title
+            // var recipeTitle = response.results[randomRecipe].title
+            var recipeTitle = response.results[randomRecipe].nutrition.nutrients[0].amount
             // create card for this recipe
 
             // add recipe title to card title
