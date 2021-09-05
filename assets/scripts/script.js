@@ -68,18 +68,8 @@ for (i = 0; i < 5; i++) {
         "headers": {
             "x-rapidapi-host": "exercisedb.p.rapidapi.com",
             "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-<<<<<<< HEAD
-        }};
-=======
-        }
-    };
-    
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
-});
 
->>>>>>> 80f7a18787ebb266915e36b78793ec7a9e806a05
+        }};
 
         $.ajax(settings).done(function (response) {
         console.log(response[i]);
