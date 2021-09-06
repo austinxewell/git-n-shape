@@ -237,36 +237,213 @@ var calorieInput = document.getElementById("#calories")
     // get calorie value
     var calorieInput = document.getElementById("#calories")
 
-    $("#nutriBtn").submit(function () {
+$("#nutriBtn").click(function () {
 
         // var calories = calorieInput
-        var numberRecipe = 21;
 
-        const settings = {
+    const settings = {
 
-            "url": `https://api.spoonacular.com/recipes/complexSearch?query=paleo&number=${numberRecipe}&addRecipeInformation=true&addRecipeNutrition=true&apiKey=21fc282010dd4a55b9f7abe8cc4b3058`,
-            "method": "GET",
+        "url": `https://api.spoonacular.com/recipes/random?number=21&addRecipeInformation=true&addRecipeNutrition=true&apiKey=21fc282010dd4a55b9f7abe8cc4b3058`,
+        "method": "GET",
 
-        };
+    };
 
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-            for (var i = 0; i < 5; i++) {
-                // generate random number to identify make recipe selection random
-                var randomRecipe = Math.floor(Math.random() * numberRecipe);
-
-                // store title recipe inside variable
-                // var recipeTitle = response.results[randomRecipe].title
-                var recipeTitle = response.results[randomRecipe].nutrition.nutrients[0].amount
-                // create card for this recipe
-
-                // add recipe title to card title
-
-                // append card to HTML
-                console.log(recipeTitle)
-            }
+    $.ajax(settings).then(function (response) {
+        var eachDayNutEl = document.querySelectorAll('.recipeInput');
+        eachDayNutEl.forEach(element => {
+            element.innerHTML='';
         });
+        var recipes = response.recipes;
+        console.log(recipes);
+        var placement = 0;
+        var mealType = 0;
+        for(var i = 0; i < recipes.length; i++){
+            var title = recipes[i].title;
+            var recipeLink = recipes[i].sourceUrl;
+            if(placement == 0){
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-1');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
+                //append random recipe as a link
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                //increase placement counter to move to next column
+                placement++
+            } else if (placement == 1) {
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-2');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                placement++
+
+            } else if (placement == 2) {
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-3');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                placement++
+                
+            } else if (placement == 3) {
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-4');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                placement++
+                
+            } else if (placement == 4) {
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-5');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                placement++
+                
+            } else if (placement == 5) {
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-6');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                placement++
+            
+            } else if (placement == 6) {
+                var containerNut = document.createElement('div');
+                var actualRecipe = document.createElement('a');
+                var docEl = document.querySelector('#n-7');
+                //create Meal type element
+                if (mealType == 0){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Breakfast:'
+                    docEl.appendChild(mealName);
+                } else if (mealType ==1){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Lunch:'
+                    docEl.appendChild(mealName);
+                } else if (mealType == 2){
+                    var mealName = document.createElement('h2');
+                    mealName.textContent='Dinner:'
+                    docEl.appendChild(mealName);
+                }
+                actualRecipe.setAttribute('href', recipeLink);
+                actualRecipe.setAttribute('target', '_blank');
+                actualRecipe.textContent = title;
+                containerNut.appendChild(actualRecipe);
+                docEl.appendChild(containerNut);
+                //reset placement counter to go back to first coloumn
+                placement = 0;
+                //increase meal type so next set of recipies fall under the next meal type
+                mealType++;
+                
+            }
+        }
+        
     });
+});
 
     // bulma logic for mobile navbar toggle animation
     document.addEventListener('DOMContentLoaded', () => {
