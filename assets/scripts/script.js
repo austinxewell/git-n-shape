@@ -37,7 +37,7 @@ function Sunday() {
             };
 
             $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br>';
+                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
                 workoutSundayEl.innerHTML = resetWorkout;
                 counter++;
                 if (counter==5) {
@@ -66,7 +66,7 @@ function Sunday() {
             }
 
             $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br>';
+                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
                 workoutMondayEl.innerHTML = resetWorkout;
                 counter++;
                 if (counter==10) {
@@ -93,7 +93,7 @@ function Sunday() {
             }
 
             $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br>';
+                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
                 workoutTuesdayEl.innerHTML = resetWorkout;
                 counter++;
                 if (counter==15) {
@@ -120,7 +120,7 @@ function Sunday() {
             }
 
             $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br>';
+                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
                 workoutWednesdayEl.innerHTML = resetWorkout;
                 counter++;
                 if (counter==20) {
@@ -147,7 +147,7 @@ function Sunday() {
             }
 
             $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br>';
+                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
                 workoutThursdayEl.innerHTML = resetWorkout;
                 counter++;
                 if (counter==25) {
@@ -174,7 +174,7 @@ function Sunday() {
             }
 
             $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br>';
+                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
                 workoutFridayEl.innerHTML = resetWorkout;
                 counter++;
                 if (counter==30) {
@@ -201,10 +201,13 @@ function Sunday() {
             }
 
             $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br>';
+                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
                 workoutSaturdayEl.innerHTML = resetWorkout;
                 // safety check for nutrition functions
-                // counter++;
+                counter++;
+                // if (counter==35) {
+//safegaurd for pressing the generate nutrition button too quickly.
+                // }
             });
         }
     }
