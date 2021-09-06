@@ -18,6 +18,10 @@
     align-items: center;
 }
 
+.form-space {
+    height: 500px;
+}
+
 /* .data-space::after {
     content: "Ready for a killer week?";
     font-size: 40px;
