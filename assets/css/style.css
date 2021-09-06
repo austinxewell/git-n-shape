@@ -3,7 +3,8 @@
     --color-secondary: #1D7A8C;
     --color-tertiary: #00233A;
 }
-#slider {
+
+#introScreen {
     height: 100vh;
     width: 100%;
     background: linear-gradient(to top, white, #00947E);
@@ -16,3 +17,22 @@
     justify-content: center;
     align-items: center;
 }
+
+/* .data-space::after {
+    content: "Ready for a killer week?";
+    font-size: 40px;
+    font-family:monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    backdrop-filter: blur(15px);
+    transition: all 2s;
+    display: none;
+} */
