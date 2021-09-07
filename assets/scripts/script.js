@@ -261,7 +261,7 @@ $("#nutriBtn").click(function () {
         var placement = 0;
         var mealType = 0;
         for(var i = 0; i < recipes.length; i++){
-            var title = recipes[i].title;
+            var title = recipes[i].title+' ';
             var recipeLink = recipes[i].sourceUrl;
             if(placement == 0){
                 var containerNut = document.createElement('div');
@@ -272,7 +272,7 @@ $("#nutriBtn").click(function () {
                 //create Meal type element
                 if (mealType == 0){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast:'
+                    mealName.textContent='Breakfast: '
                     mealName.classList.add("has-text-weight-semibold");
                     breakfastDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -283,7 +283,7 @@ $("#nutriBtn").click(function () {
                     breakfastDivEl.appendChild(containerNut);
                 } else if (mealType ==1){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch:'
+                    mealName.textContent='Lunch: '
                     mealName.classList.add("has-text-weight-semibold");
                     lunchDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -294,7 +294,7 @@ $("#nutriBtn").click(function () {
                     lunchDivEl.appendChild(containerNut);
                 } else if (mealType == 2){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner:'
+                    mealName.textContent='Dinner: '
                     mealName.classList.add("has-text-weight-semibold");
                     dinnerDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -315,7 +315,7 @@ $("#nutriBtn").click(function () {
                 //create Meal type element
                 if (mealType == 0){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast:'
+                    mealName.textContent='Breakfast: '
                     mealName.classList.add("has-text-weight-semibold");
                     breakfastDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -326,7 +326,7 @@ $("#nutriBtn").click(function () {
                     breakfastDivEl.appendChild(containerNut);
                 } else if (mealType ==1){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch:'
+                    mealName.textContent='Lunch: '
                     mealName.classList.add("has-text-weight-semibold");
                     lunchDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -337,7 +337,7 @@ $("#nutriBtn").click(function () {
                     lunchDivEl.appendChild(containerNut);
                 } else if (mealType == 2){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner:'
+                    mealName.textContent='Dinner: '
                     mealName.classList.add("has-text-weight-semibold");
                     dinnerDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -358,7 +358,7 @@ $("#nutriBtn").click(function () {
                 //create Meal type element
                 if (mealType == 0){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast:'
+                    mealName.textContent='Breakfast: '
                     mealName.classList.add("has-text-weight-semibold");
                     breakfastDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -369,7 +369,7 @@ $("#nutriBtn").click(function () {
                     breakfastDivEl.appendChild(containerNut);
                 } else if (mealType ==1){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch:'
+                    mealName.textContent='Lunch: '
                     mealName.classList.add("has-text-weight-semibold");
                     lunchDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -380,7 +380,7 @@ $("#nutriBtn").click(function () {
                     lunchDivEl.appendChild(containerNut);
                 } else if (mealType == 2){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner:'
+                    mealName.textContent='Dinner: '
                     mealName.classList.add("has-text-weight-semibold");
                     dinnerDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -401,7 +401,7 @@ $("#nutriBtn").click(function () {
                 //create Meal type element
                 if (mealType == 0){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast:'
+                    mealName.textContent='Breakfast: '
                     mealName.classList.add("has-text-weight-semibold");
                     breakfastDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -412,7 +412,7 @@ $("#nutriBtn").click(function () {
                     breakfastDivEl.appendChild(containerNut);
                 } else if (mealType ==1){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch:'
+                    mealName.textContent='Lunch: '
                     mealName.classList.add("has-text-weight-semibold");
                     lunchDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -423,7 +423,7 @@ $("#nutriBtn").click(function () {
                     lunchDivEl.appendChild(containerNut);
                 } else if (mealType == 2){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner:'
+                    mealName.textContent='Dinner: '
                     mealName.classList.add("has-text-weight-semibold");
                     dinnerDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -444,7 +444,7 @@ $("#nutriBtn").click(function () {
                 //create Meal type element
                 if (mealType == 0){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast:'
+                    mealName.textContent='Breakfast: '
                     mealName.classList.add("has-text-weight-semibold");
                     breakfastDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -455,7 +455,7 @@ $("#nutriBtn").click(function () {
                     breakfastDivEl.appendChild(containerNut);
                 } else if (mealType ==1){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch:'
+                    mealName.textContent='Lunch: '
                     mealName.classList.add("has-text-weight-semibold");
                     lunchDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -466,7 +466,7 @@ $("#nutriBtn").click(function () {
                     lunchDivEl.appendChild(containerNut);
                 } else if (mealType == 2){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner:'
+                    mealName.textContent='Dinner: '
                     mealName.classList.add("has-text-weight-semibold");
                     dinnerDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -487,7 +487,7 @@ $("#nutriBtn").click(function () {
                 //create Meal type element
                 if (mealType == 0){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast:'
+                    mealName.textContent='Breakfast: '
                     mealName.classList.add("has-text-weight-semibold");
                     breakfastDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -498,7 +498,7 @@ $("#nutriBtn").click(function () {
                     breakfastDivEl.appendChild(containerNut);
                 } else if (mealType ==1){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch:'
+                    mealName.textContent='Lunch: '
                     mealName.classList.add("has-text-weight-semibold");
                     lunchDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -509,7 +509,7 @@ $("#nutriBtn").click(function () {
                     lunchDivEl.appendChild(containerNut);
                 } else if (mealType == 2){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner:'
+                    mealName.textContent='Dinner: '
                     mealName.classList.add("has-text-weight-semibold");
                     dinnerDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -530,7 +530,7 @@ $("#nutriBtn").click(function () {
                 //create Meal type element
                 if (mealType == 0){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast:'
+                    mealName.textContent='Breakfast: '
                     mealName.classList.add("has-text-weight-semibold");
                     breakfastDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -541,7 +541,7 @@ $("#nutriBtn").click(function () {
                     breakfastDivEl.appendChild(containerNut);
                 } else if (mealType ==1){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch:'
+                    mealName.textContent='Lunch: '
                     mealName.classList.add("has-text-weight-semibold");
                     lunchDivEl.appendChild(mealName);
                     //append random recipe as a link
@@ -552,7 +552,7 @@ $("#nutriBtn").click(function () {
                     lunchDivEl.appendChild(containerNut);
                 } else if (mealType == 2){
                     var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner:'
+                    mealName.textContent='Dinner: '
                     mealName.classList.add("has-text-weight-semibold");
                     dinnerDivEl.appendChild(mealName);
                     //append random recipe as a link
