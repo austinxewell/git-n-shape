@@ -6,7 +6,10 @@
 // var cardio = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/cardio';
 // var chest = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest';
 // var shoulders = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/shoulders';
+
+
 var all = 'https://exercisedb.p.rapidapi.com/exercises/equipment/body%20weight';
+
 // DOM elements
 var workoutContainerEl = document.querySelector('#weekly-workout');
 var workoutCard = document.createElement('div');
@@ -27,25 +30,111 @@ function startPage() {
             };
 
             $.ajax(settings).done(function (response) {
+                var workoutDayEl = document.querySelectorAll('.workoutInput');
+                workoutDayEl.forEach(element => {
+                    element.innerHTML='';
+                });
                 console.log(response);
-                console.log(response.length);
+
+                var placement = 0;
+ 
                 
-                for(var i = 0; i < 5; i++){
+                for(var i = 0; i < 35; i++){
+
                     var workouts = (response[Math.floor(Math.random() * response.length)]);
+
                 console.log(workouts)
-                
-            }})
+                var workoutLink = (workouts.gifUrl);
+                console.log(workoutLink)
+                //APPENDS to workout area of the DOM
+                if(placement == 0){
+                    var workoutContainer = document.createElement('div');
+                    var actualWorkout = document.createElement('a');
+                    var docEl = document.querySelector('#workDay-1');
 
-            // append to dom element
-    
-            // workoutContainerEl.innerHTML = '';
-            // workoutCard.setAttribute(response[0]);
-            // workoutContainerEl.appendChild(workoutCard);
+                    actualWorkout.setAttribute('href', workoutLink);
+                    actualWorkout.setAttribute('target', '_blank');
+                    var workoutName = document.createElement('h2');
+                    workoutName.textContent= (workouts.name)
+                    docEl.appendChild(workoutName);
+
+                    // actualWorkout.setAttribute('href', workoutLink);
+                    // actualWorkout.setAttribute('target', '_blank');
+                    // actualWorkout.textContent = (workout.name);
+                     workoutContainer.appendChild(actualWorkout);
+                    // docEl.appendChild(workoutContainer);
+       
+                    placement++
+                } else if (placement == 1) {
+                    var workoutContainer = document.createElement('div');
+                    var workoutLink = document.createElement('a');
+                    var docEl = document.querySelector('#workDay-2');
+
+                    var workoutName = document.createElement('h2');
+                    workoutName.textContent= (workouts.name)
+                    docEl.appendChild(workoutName);
+                    placement++
+                }   else if (placement == 2) {
+                    var workoutContainer = document.createElement('div');
+                    var workoutLink = document.createElement('a');
+                    var docEl = document.querySelector('#workDay-3');
+
+                    var workoutName = document.createElement('h2');
+                    workoutName.textContent= (workouts.name)
+                    docEl.appendChild(workoutName);
+                    placement++
+                }   else if (placement == 3) {
+                    var workoutContainer = document.createElement('div');
+                    var workoutLink = document.createElement('a');
+                    var docEl = document.querySelector('#workDay-4');
+
+                    var workoutName = document.createElement('h2');
+                    workoutName.textContent= (workouts.name)
+                    docEl.appendChild(workoutName);
+                    placement++
+                }   else if (placement == 4) {
+                    var workoutContainer = document.createElement('div');
+                    var workoutLink = document.createElement('a');
+                    var docEl = document.querySelector('#workDay-5');
+
+                    var workoutName = document.createElement('h2');
+                    workoutName.textContent= (workouts.name)
+                    docEl.appendChild(workoutName);
+                    placement++
+                }   else if (placement == 5) {
+                    var workoutContainer = document.createElement('div');
+                    var workoutLink = document.createElement('a');
+                    var docEl = document.querySelector('#workDay-6');
+
+                    var workoutName = document.createElement('h2');
+                    workoutName.textContent= (workouts.name)
+                    docEl.appendChild(workoutName);
+                    placement++
+                }   else if (placement == 6) {
+                    var workoutContainer = document.createElement('div');
+                    var workoutLink = document.createElement('a');
+                    var docEl = document.querySelector('#workDay-7');
+
+                    var workoutName = document.createElement('h2');
+                    workoutName.textContent= (workouts.name)
+                    docEl.appendChild(workoutName);
+                    placement++
+                }
+
+        
+        // workoutContainerEl.innerHTML = ;
+        //   workoutCard.setAttribute(workouts.name);
+        //   workoutContainerEl.appendChild(workoutCard);
+
+        
+    }})
+
+  
 
 
-        //for (i = 0; i < 5; i++) 
+ 
 
-
+ 
         // 5 waist workouts
         // for (i = 0; i < 5; i++) {
         //     const settings = {
