@@ -39,7 +39,7 @@
         <div class="navbar-end">
             <div class="navbar-item">
             <div class="buttons">
-                <a class="button is-primary">
+                <a id="sign-up" class="button is-primary">
                 <strong>Sign up</strong>
                 </a>
                 <a class="button is-light">
@@ -90,8 +90,8 @@
                 </div>
             </section>
 
-            <!-- column where all the data goes -->
-            <section class="column box ml-3 has-background-primary-dark data-space">
+            <!-- Data Column -->
+            <section id="overlay" class="column box ml-3 has-background-primary-dark data-space">
 
                 <!-- Space for the workout plan -->
                 <h2 class="title has-text-white">Workouts:</h2>
@@ -101,7 +101,7 @@
                             IN JAVASCRIPT-->
                             <div class="column mr-2">
                                 <div class="has-background-primary mb-2">
-                                    <h3 class="p-1">Sunday</h3>
+                                    <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Sunday</h3>
                                 </div>
                                 <div class="has-background-light p-1">
                                     <p id="workoutSunday">Your Sunday Workout</p>
@@ -109,7 +109,7 @@
                             </div>
                             <div class="column mr-2">
                                 <div class="has-background-primary mb-2">
-                                    <h3 class="p-1">Monday</h3>
+                                    <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Monday</h3>
                                 </div>
                                 <div class="has-background-light p-1">
                                     <p id="workoutMonday">Your Monday Workout</p>
@@ -117,7 +117,7 @@
                             </div>
                             <div class="column mr-2">
                                 <div class="has-background-primary mb-2">
-                                    <h3 class="p-1">Tuesday</h3>
+                                    <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Tuesday</h3>
                                 </div>
                                 <div class="has-background-light p-1">
                                     <p id="workoutTuesday">Your Tuesday Workout</p>
@@ -125,7 +125,7 @@
                             </div>
                             <div class="column mr-2">
                                 <div class="has-background-primary mb-2">
-                                    <h3 class="p-1">Wednesday</h3>
+                                    <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Wednesday</h3>
                                 </div>
                                 <div class="has-background-light p-1">
                                     <p id="workoutWednesday">Your Wednesday Workout</p>
@@ -133,7 +133,7 @@
                             </div>
                             <div class="column mr-2">
                                 <div class="has-background-primary mb-2">
-                                    <h3 class="p-1">Thursday</h3>
+                                    <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Thursday</h3>
                                 </div>
                                 <div class="has-background-light p-1">
                                     <p id="workoutThursday">Your Thursday Workout</p>
@@ -141,7 +141,7 @@
                             </div>
                             <div class="column mr-2">
                                 <div class="has-background-primary mb-2">
-                                    <h3 class="p-1">Friday</h3>
+                                    <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Friday</h3>
                                 </div>
                                 <div class="has-background-light p-1">
                                     <p id="workoutFriday">Your Friday Workout</p>
@@ -149,7 +149,7 @@
                             </div>
                             <div class="column mr-2">
                                 <div class="has-background-primary mb-2">
-                                    <h3 class="p-1">Saturday</h3>
+                                    <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Saturday</h3>
                                 </div>
                                 <div class="has-background-light p-1">
                                     <p id="workoutSaturday">Your Saturday Workout</p>
@@ -164,61 +164,61 @@
                         <div class="columns weekly-nutrition">
                             <!--DAILY COLUMNS WILL BE CREATED AND PUT HERE
                                 IN JAVASCRIPT-->
-                                <div class="column mr-2">
+                                <div id="sunday" class="column mr-2">
                                     <div class="has-background-primary mb-2">
-                                        <h3 class="p-1">Sunday</h3>
+                                        <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Sunday</h3>
                                     </div>
-                                    <div class="has-background-light p-1 recipeInput" id="n-1">
-                                        
-                                    </div>
+                                    <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-1"></div>
+                                    <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-1"></div>
+                                    <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-1"></div>
                                 </div>
                                 <div class="column mr-2">
                                     <div class="has-background-primary mb-2">
-                                        <h3 class="p-1">Monday</h3>
+                                        <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Monday</h3>
                                     </div>
-                                    <div class="has-background-light p-1 recipeInput" id="n-2">
-                                        
-                                    </div>
+                                    <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-2"></div>
+                                    <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-2"></div>
+                                    <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-2"></div>
                                 </div>
                                 <div class="column mr-2">
                                     <div class="has-background-primary mb-2">
-                                        <h3 class="p-1">Tuesday</h3>
+                                        <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Tuesday</h3>
                                     </div>
-                                    <div class="has-background-light p-1 recipeInput" id="n-3">
-                                        
-                                    </div>
+                                    <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-3"></div>
+                                    <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-3"></div>
+                                    <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-3"></div>
                                 </div>
                                 <div class="column mr-2">
                                     <div class="has-background-primary mb-2">
-                                        <h3 class="p-1">Wednesday</h3>
+                                        <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Wednesday</h3>
                                     </div>
-                                    <div class="has-background-light p-1 recipeInput" id="n-4">
-                                        
-                                    </div>
+                                    <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-4"></div>
+                                    <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-4"></div>
+                                    <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-4"></div>
                                 </div>
                                 <div class="column mr-2">
                                     <div class="has-background-primary mb-2">
-                                        <h3 class="p-1">Thursday</h3>
+                                        <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Thursday</h3>
                                     </div>
-                                    <div class="has-background-light p-1 recipeInput" id="n-5">
-                                        
-                                    </div>
+                                    <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-5"></div>
+                                    <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-5"></div>
+                                    <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-5"></div>
                                 </div>
                                 <div class="column mr-2">
                                     <div class="has-background-primary mb-2">
-                                        <h3 class="p-1">Friday</h3>
+                                        <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Friday</h3>
                                     </div>
-                                    <div class="has-background-light p-1 recipeInput" id="n-6">
-                                        
-                                    </div>
+                                    <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-6"></div>
+                                    <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-6"></div>
+                                    <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-6"></div>
                                 </div>
                                 <div class="column mr-2">
                                     <div class="has-background-primary mb-2">
-                                        <h3 class="p-1">Saturday</h3>
+                                        <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Saturday</h3>
                                     </div>
-                                    <div class="has-background-light p-1 recipeInput" id="n-7">
-                                        
-                                    </div>
+                                    <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-7"></div>
+                                    <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-7"></div>
+                                    <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-7"></div>
                                 </div>
                             </div>
                         </div>
@@ -232,12 +232,12 @@
                                 <span>Save Plan</span>
                             </button>
                         </div>
-                    </section>
-                </div>
-            </main>
+            </section>
+        </div>
+    </main>
 
 <!-- intro screen -->
-<div id="slider">
+<div id="introScreen">
     <h1 id="intro" class="title">Welcome to Git N Shape</h1>
     <h2 id="slogan" class="subtitle mt-2">Fitness starts here.</h2>
 </div>  
