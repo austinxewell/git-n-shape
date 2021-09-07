@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar has-background-light" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+        <a class="navbar-item" href="./index.html">
+            <h1 class="title">GIT N SHAPE</h1>
+        </a>
+        
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        </div>
+    
+        <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="./index.html">
+            Home
+            </a>
+    
+            <a class="navbar-item" href="#">
+            Saved Plans
+            </a>
+    
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+            <div class="buttons">
+                <a id="sign-up" class="button is-primary">
+                <strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                Log in
+                </a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <main class="main" id="saved-plans-main">
+        <h1 class="saved-plans-page">Saved Plans</h1>
+        <h3>(On this device)</h3>
+        <div>
+            <ul class="saved-table"></ol>
+        </div>
+        <div>
+            <button class="clear-btn" id="clear-btn">Clear Data</button>
+        </div>
+
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- GSAP TimelineMax CDN for animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<!-- Our Animation Script -->
+<script src="./assets/scripts/animate.js"></script>
+    <script src="./assets/scripts/save.js"></script>
+    <script src="./assets/scripts/loadallsaves.js"></script>
+</body>
+</html>
