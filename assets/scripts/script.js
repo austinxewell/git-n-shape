@@ -121,19 +121,19 @@ var recipeDisplayHandler = function(recipeName, recipeLink, number) {
     if (counter === 1) {
         // name the meal breakfast
         // insert recipe info as html
-        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Breakfast:</h2><a href="+recipeLink+">"+recipeName+"</a>";
+        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Breakfast:</h2><a target='_blank' href="+recipeLink+">"+recipeName+"</a>";
     }
     // (lunch)
     else if (counter === 2) {
         // name the meal lunch
         // insert recipe info as html
-        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Lunch:</h2><a href="+recipeLink+">"+recipeName+"</a>";
+        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Lunch:</h2><a target='_blank' href="+recipeLink+">"+recipeName+"</a>";
     }
     // (dinner)
     else if (counter === 3) {
         // name the meal dinner
         // insert recipe info as html
-        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Dinner:</h2><a href="+recipeLink+">"+recipeName+"</a>";
+        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Dinner:</h2><a target='_blank' href="+recipeLink+">"+recipeName+"</a>";
     }
 
     // increment counter
