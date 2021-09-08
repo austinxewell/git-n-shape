@@ -64,7 +64,7 @@ var workoutDisplayHandler = function(workoutName, dayId, slot) {
 
 // 
 // 
-// I BELIEVE THIS IS WHERE NUTRITION SECTION LOGIC BEGINS - TAYLOR
+// NUTRITION SECTION LOGIC BEGINS
 // 
 // 
 
@@ -104,18 +104,17 @@ $("#nutriBtn").click(function () {
             // send info to recipe display handler
             recipeDisplayHandler(recipeName, recipeLink, i)
         }
-
     });
 });
 
 // Use a counter to assign meal of the day
 var counter = 1
 
-// generate html content to rest inside recipe<day>-<slot> divs. Accept recipeName, recipeLink, day ID, and day slot as arguments from api fetch
-var recipeDisplayHandler = function(recipeName, recipeLink, slot) {
+// generate html content to rest inside recipe<number> divs. Accept recipeName, recipeLink, and number as arguments from api fetch
+var recipeDisplayHandler = function(recipeName, recipeLink, number) {
 
     // grab the div by id
-    var workingDiv = document.querySelector("#recipe"+slot);
+    var workingDiv = document.querySelector("#recipe"+number);
 
     // if counter gets too high (4), reset it
     if (counter == 4) {
@@ -171,46 +170,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// get calorie value
+var calorieInput = document.getElementById("#calories")
 
 
-
-    // get calorie value
-    var calorieInput = document.getElementById("#calories")
-
-    $("#nutriBtn").submit(function () {
-        // var calories = calorieInput
-        var numberRecipe = 21;
-
-        const settings = {
-
-            "url": `https://api.spoonacular.com/recipes/complexSearch?query=paleo&number=${numberRecipe}&addRecipeInformation=true&addRecipeNutrition=true&apiKey=21fc282010dd4a55b9f7abe8cc4b3058`,
-            "method": "GET",
-
-        };
-
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-            for (var i = 0; i < 5; i++) {
-                // generate random number to identify make recipe selection random
-                var randomRecipe = Math.floor(Math.random() * numberRecipe);
-
-                // store title recipe inside variable
-                // var recipeTitle = response.results[randomRecipe].title
-                var recipeTitle = response.results[randomRecipe].nutrition.nutrients[0].amount
-                // create card for this recipe
-
-                // add recipe title to card title
-
-                // append card to HTML
-                console.log(recipeTitle)
-            }
-        });
-    });
-
-//fetch data from APIs using for input
+// 
+// 
+// SAVE BUTTON LOGIC BEGINS
+// 
+// 
 
 
-//button click function
+//save button click function
 $(saveBtn).on('click', function(){
     //array for all of the saved data ever
     var allSavedData = JSON.parse(localStorage.getItem("saves")) || [];
@@ -229,7 +200,7 @@ $(saveBtn).on('click', function(){
         dayNumber++;
     }
 
-    //gets user set name for the save
+    //gets user to set name for the save
     var setName = prompt('enter a name for the save');
 
     //array for all food items
