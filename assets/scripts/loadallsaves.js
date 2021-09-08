@@ -6,12 +6,14 @@ var displaySaves = function() {
     var workouts = allSavedData[0].workout
     console.log(workouts);
     var dayNumber = 1;
+    var workoutNumber = 0;
     for (i=0;i<7;i++){
         var slot = 0;
         for(var u = 0;u<5;u++){
             var workingDiv = document.querySelector("#workoutDay"+dayNumber+"-"+slot);
-            workingDiv.textContent =workouts[slot];
+            workingDiv.textContent =workouts[workoutNumber];
             slot++;
+            workoutNumber++;
         }
         dayNumber++
     }
