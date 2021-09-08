@@ -177,12 +177,14 @@ document.addEventListener('DOMContentLoaded', () => {
 $(saveBtn).on('click', function(){
     
     // opens modal to request setName
-    $(".modal").toggleClass("is-active");
+    $("#save-modal").toggleClass("is-active");
 })
 
 // modal save button closes modal and runs save function
-$("#modal-save-btn").click(function() {
-    $(".modal").toggleClass("is-active");
+$("#save-modal-save-btn").click(function() {
+    $("#save-modal").toggleClass("is-active");
+
+    $("#confirmation-modal").toggleClass("is-active");
 
     //array for all of the saved data ever
     var allSavedData = JSON.parse(localStorage.getItem("saves")) || [];
@@ -229,16 +231,30 @@ $("#modal-save-btn").click(function() {
 
 })
 
-// modal cancel button click
-$("#modal-cancel-btn").click(function() {
+// save modal cancel button click
+$("#save-modal-cancel-btn").click(function() {
 
     // close modal
-    $(".modal").toggleClass("is-active");
+    $("#save-modal").toggleClass("is-active");
 })
 
-// modal delete button click
-$("#modal-delete-btn").click(function() {
+// confirm modal cancel button click
+$("#confirmation-modal-return-home-button").click(function() {
 
     // close modal
-    $(".modal").toggleClass("is-active");
+    $("#confirmation-modal").toggleClass("is-active");
+})
+
+//save modal delete button click
+$("#save-modal-delete-btn").click(function() {
+
+    // close modal
+    $("#save-modal").toggleClass("is-active");
+})
+
+//confirmation modal delete button click
+$("#confirmation-modal-delete-btn").click(function() {
+
+    // close modal
+    $("#confirmation-modal").toggleClass("is-active");
 })

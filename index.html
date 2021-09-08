@@ -229,20 +229,37 @@
             </section>
         </div>
 
-        <!-- Modal -->
-        <div class="modal">
+        <!-- Save Modal -->
+        <div id="save-modal" class="modal">
             <div class="modal-background"></div>
             <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">Enter a name for your fitness plan:</p>
-                <button id="modal-delete-btn" class="delete" aria-label="close"></button>
+                <button id="save-modal-delete-btn" class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
                 <input id="plan-name" type="text" class="is-full-width input">
             </section>
             <footer class="modal-card-foot">
-                <button id="modal-save-btn" class="button is-primary">Save Plan</button>
-                <button id="modal-cancel-btn" class="button">Cancel</button>
+                    <button id="save-modal-save-btn" class="button is-primary">Save Plan</button>
+                <button id="save-modal-cancel-btn" class="button">Cancel</button>
+            </footer>
+            </div>
+        </div>
+
+        <!-- Confirmation Modal -->
+        <div id="confirmation-modal" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Plan Saved!</p>
+                <button id="confirmation-modal-delete-btn" class="delete" aria-label="close"></button>
+            </header>
+            <footer class="modal-card-foot">
+                <a href="./allsaved.html">
+                    <button id="confirmation-modal-go-to-button" class="button is-primary">Go to My Plans</button>
+                </a>
+                <button id="confirmation-modal-return-home-button" class="button">Return home</button>
             </footer>
             </div>
         </div>
