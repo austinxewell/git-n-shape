@@ -170,10 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// get calorie value
-var calorieInput = document.getElementById("#calories")
-
-
 // 
 // 
 // SAVE BUTTON LOGIC BEGINS
