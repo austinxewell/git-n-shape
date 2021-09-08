@@ -1,9 +1,20 @@
 var savedList = document.querySelector('.saved-table');
 var allSavedData = JSON.parse(localStorage.getItem("saves")) || [];
 var clearBtn = document.querySelector('#clear-btn');
+var prevPlan = document.querySelector('#p-plan');
+var nextPlan = document.querySelector('#n-plan');
 
+
+//plan counter
+var planNumber = 0;
 var displaySaves = function() {
-    var workouts = allSavedData[0].workout
+    //load savename
+    var saveName = allSavedData[planNumber].name
+    var nameEl =document.querySelector('#plan-title');
+    nameEl.textContent=saveName;
+
+
+    var workouts = allSavedData[planNumber].workout
     var dayNumber = 1;
     var workoutNumber = 0;
     for (i=0;i<5;i++){
@@ -17,8 +28,7 @@ var displaySaves = function() {
         dayNumber++
     }
 
-    var recipies = allSavedData[0].nutrition
-    console.log(recipies);
+    var recipies = allSavedData[planNumber].nutrition
     var counter =1;
     for(i=0;i<recipies.length;i++){
         var recipeName = recipies[i];
@@ -54,6 +64,30 @@ var displaySaves = function() {
 }
 
 displaySaves();
+
+$(prevPlan).on('click', function(){
+    if (planNumber <=0){
+        planNumber = 0;
+        displaySaves();
+        return;
+    }else {
+    planNumber--;
+    displaySaves();
+    return planNumber;
+    }
+});
+
+$(nextPlan).on('click', function(){
+    if (planNumber >= (allSavedData.length)-1){
+        planNumber = (allSavedData.length)-1;
+        displaySaves();
+        return;
+    } else {
+    planNumber++;
+    displaySaves();
+    return planNumber;
+    }
+})
 
 $(clearBtn).on('click', function(){
     localStorage.clear();
