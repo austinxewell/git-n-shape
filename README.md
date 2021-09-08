@@ -3,6 +3,7 @@ Git-N-Shape is web based workout and nutrition generator. This website will let 
 
 ## Description
 -----------
+
 Git-N-Shape will allow you to generate a functional exercise routine that will assisst you in developing knowledge and optimal work out routines daily. Git-N-Shape allows you to target specific body parts you would like to tone up and get looking the way you want! 
 
 Git-N-Shape will also take out the hassle of figuring out which meals you should be eating. With its wide varity of meals you will not have to worry about having options for breakfast, lunch and dinner each day. Git-N-Shape will not only generate a meal plan, but will allow you to click on the meal to see the exact recipe for your meal.
@@ -11,15 +12,27 @@ Once you have your plans generated you will have the option to save and compare 
 
 ## Built With
 ----------
+
 HTML
 
 CSS
 
 JavaScript
 
+<<<<<<< HEAD
 
 ## Links
 ---------
+=======
+Bulma Framework
+
+Gsap
+
+
+## Links
+------------
+
+>>>>>>> feature/readme
 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
 https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css
@@ -30,10 +43,26 @@ https://exercisedb.p.rapidapi.com/
 https://api.spoonacular.com/recipes/
 
 ## Screenshots
+<<<<<<< HEAD
 -----------
 
+=======
+------------------
+>>>>>>> feature/readme
+
+![git-n-shape1](https://user-images.githubusercontent.com/86080954/132438873-aa1ce939-5f9d-48b2-9f94-8402d683a5fb.JPG)
+
+![git-n-shape2](https://user-images.githubusercontent.com/86080954/132438886-6a2209e3-4c12-4a2f-80b8-87ba1bbd9d46.JPG)
+
+<<<<<<< HEAD
+## Deployed Website
+------------
+=======
+![git-n-shape3](https://user-images.githubusercontent.com/86080954/132438914-e56f4e44-c46e-41a4-a531-d66d27a15e22.JPG)
 
 
 ## Deployed Website
-------------
+---------------------
+
+>>>>>>> feature/readme
 https://austinxewell.github.io/git-n-shape/
