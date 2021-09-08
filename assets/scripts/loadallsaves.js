@@ -103,6 +103,26 @@ $("#button-container").on("click", "button", function() {
 })
 
 $(clearBtn).on('click', function(){
+
+    // open confirmation modal
+    $("#confirmation-modal").toggleClass("is-active");
+})
+
+$("#confirmation-modal-delete-button").click(function() {
+    
     localStorage.clear();
     window.location.reload();
 })
+
+$("#confirmation-modal-exit-btn").click(function() {
+
+    // close confirmation modal
+    $("#confirmation-modal").toggleClass("is-active");
+})
+
+$("#confirmation-modal-return-button").click(function() {
+
+    // close confirmation modal
+    $("#confirmation-modal").toggleClass("is-active");
+})
+
