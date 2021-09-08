@@ -175,12 +175,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //save button click function
 $(saveBtn).on('click', function(){
+    
+    // opens modal to request setName
+    $(".modal").toggleClass("is-active");
+})
+
+// modal save button closes modal and runs save function
+$("#modal-save-btn").click(function() {
+    $(".modal").toggleClass("is-active");
+
     //array for all of the saved data ever
     var allSavedData = JSON.parse(localStorage.getItem("saves")) || [];
 
-        //gets user to set name for the save
-        var setName = prompt('enter a name for the save');
-    
+    var setName = $("#plan-name").val().trim();
+
     //saves workout data
 
     workoutArr=[];
@@ -219,4 +227,18 @@ $(saveBtn).on('click', function(){
     //adds
     localStorage.setItem('saves', JSON.stringify(allSavedData));
 
+})
+
+// modal cancel button click
+$("#modal-cancel-btn").click(function() {
+
+    // close modal
+    $(".modal").toggleClass("is-active");
+})
+
+// modal delete button click
+$("#modal-delete-btn").click(function() {
+
+    // close modal
+    $(".modal").toggleClass("is-active");
 })
