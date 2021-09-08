@@ -23,7 +23,7 @@ function getRandomInt(max) {
 // Listen for workout button click and grab response data
 $("#workOutBtn").on('click', (function() {
     console.log(bodyPart);
-    for (var i = 0; i < 7; i++) {
+    for (var i = 0; i < 5; i++) {
         const settings = {
             "async": true,
             "crossDomain": true,
@@ -61,33 +61,16 @@ var displayHandler = function(workoutName, dayId, slot) {
     workingDiv.innerHTML = "<p>"+workoutName+"</p>";
 }
 
+
+// 
+// 
 // I BELIEVE THIS IS WHERE NUTRITION SECTION LOGIC BEGINS - TAYLOR
+// 
+// 
+
 
 // get calorie value
 var calorieInput = document.getElementById("#calories")
-
-//listen for form submit
-// $( "#workOutBtn" ).click(function() {
-    //     const settings = {
-        //         "async": true,
-    //         "crossDomain": true,
-    //         "url": waist,
-    //         "method": "GET",
-    //         "headers": {
-    //             "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-    //             "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-    //         }
-    //     };
-
-    //     $.ajax(settings).done(function (response) {
-    //         console.log(response);
-    //     });
-    //   });
-
-
-
-    // get calorie value
-    var calorieInput = document.getElementById("#calories")
 
 $("#nutriBtn").click(function () {
 
@@ -101,6 +84,7 @@ $("#nutriBtn").click(function () {
     };
 
     $.ajax(settings).then(function (response) {
+
         var eachDayNutEl = document.querySelectorAll('.recipeInput');
         eachDayNutEl.forEach(element => {
             element.innerHTML='';
