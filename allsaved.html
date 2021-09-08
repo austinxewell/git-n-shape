@@ -61,6 +61,164 @@
         </div>
 
     </main>
+    <section id="overlay" class="column box ml-3 has-background-primary-dark data-space">
+
+        <!-- Space for the workout plan -->
+        <h2 class="title has-text-white">Workouts:</h2>
+        <div class="box container ">
+            <div class="columns weekly-workout">
+                <!--DAILY COLUMNS WILL BE CREATED AND PUT HERE
+                    IN JAVASCRIPT-->
+                    <div class="column mr-2">
+                        <div class="has-background-primary mb-2">
+                            <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Sunday</h3>
+                        </div>
+                        <div class="box has-background-primary-light p-2 mb-2" id="workoutDay1-0"></div>
+                        <div class="box has-background-info-light p-2 mb-2" id="workoutDay1-1"></div>
+                        <div class="box has-background-success-light p-2 mb-2" id="workoutDay1-2"></div>
+                        <div class="box has-background-warning-light p-2 mb-2" id="workoutDay1-3"></div>
+                        <div class="box has-background-danger-light p-2 mb-2" id="workoutDay1-4"></div>
+                    </div>
+                    <div class="column mr-2">
+                        <div class="has-background-primary mb-2">
+                            <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Monday</h3>
+                        </div>
+                        <div class="box has-background-primary-light p-2 mb-2" id="workoutDay2-0"></div>
+                        <div class="box has-background-info-light p-2 mb-2" id="workoutDay2-1"></div>
+                        <div class="box has-background-success-light p-2 mb-2" id="workoutDay2-2"></div>
+                        <div class="box has-background-warning-light p-2 mb-2" id="workoutDay2-3"></div>
+                        <div class="box has-background-danger-light p-2 mb-2" id="workoutDay2-4"></div>
+                    </div>
+                    <div class="column mr-2">
+                        <div class="has-background-primary mb-2">
+                            <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Tuesday</h3>
+                        </div>
+                        <div class="box has-background-primary-light p-2 mb-2" id="workoutDay3-0"></div>
+                        <div class="box has-background-info-light p-2 mb-2" id="workoutDay3-1"></div>
+                        <div class="box has-background-success-light p-2 mb-2" id="workoutDay3-2"></div>
+                        <div class="box has-background-warning-light p-2 mb-2" id="workoutDay3-3"></div>
+                        <div class="box has-background-danger-light p-2 mb-2" id="workoutDay3-4"></div>
+                    </div>
+                    <div class="column mr-2">
+                        <div class="has-background-primary mb-2">
+                            <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Wednesday</h3>
+                        </div>
+                        <div class="box has-background-primary-light p-2 mb-2" id="workoutDay4-0"></div>
+                        <div class="box has-background-info-light p-2 mb-2" id="workoutDay4-1"></div>
+                        <div class="box has-background-success-light p-2 mb-2" id="workoutDay4-2"></div>
+                        <div class="box has-background-warning-light p-2 mb-2" id="workoutDay4-3"></div>
+                        <div class="box has-background-danger-light p-2 mb-2" id="workoutDay4-4"></div>
+                    </div>
+                    <div class="column mr-2">
+                        <div class="has-background-primary mb-2">
+                            <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Thursday</h3>
+                        </div>
+                        <div class="box has-background-primary-light p-2 mb-2" id="workoutDay5-0"></div>
+                        <div class="box has-background-info-light p-2 mb-2" id="workoutDay5-1"></div>
+                        <div class="box has-background-success-light p-2 mb-2" id="workoutDay5-2"></div>
+                        <div class="box has-background-warning-light p-2 mb-2" id="workoutDay5-3"></div>
+                        <div class="box has-background-danger-light p-2 mb-2" id="workoutDay5-4"></div>
+                    </div>
+                    <div class="column mr-2">
+                        <div class="has-background-primary mb-2">
+                            <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Friday</h3>
+                        </div>
+                        <div class="box has-background-primary-light p-2 mb-2" id="workoutDay6-0"></div>
+                        <div class="box has-background-info-light p-2 mb-2" id="workoutDay6-1"></div>
+                        <div class="box has-background-success-light p-2 mb-2" id="workoutDay6-2"></div>
+                        <div class="box has-background-warning-light p-2 mb-2" id="workoutDay6-3"></div>
+                        <div class="box has-background-danger-light p-2 mb-2" id="workoutDay6-4"></div>
+                    </div>
+                    <div class="column mr-2">
+                        <div class="has-background-primary mb-2">
+                            <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Saturday</h3>
+                        </div>
+                        <div class="box has-background-primary-light p-2 mb-2" id="workoutDay7-0"></div>
+                        <div class="box has-background-info-light p-2 mb-2" id="workoutDay7-1"></div>
+                        <div class="box has-background-success-light p-2 mb-2" id="workoutDay7-2"></div>
+                        <div class="box has-background-warning-light p-2 mb-2" id="workoutDay7-3"></div>
+                        <div class="box has-background-danger-light p-2 mb-2" id="workoutDay7-4"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Space for the nutrition plan -->
+            <h2 class="title has-text-white">Recipes:</h2>
+            <div class="box container">
+                <div class="columns weekly-nutrition">
+                    <!--DAILY COLUMNS WILL BE CREATED AND PUT HERE
+                        IN JAVASCRIPT-->
+                        <div id="sunday" class="column mr-2">
+                            <div class="has-background-primary mb-2">
+                                <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Sunday</h3>
+                            </div>
+                            <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-1"></div>
+                            <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-1"></div>
+                            <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-1"></div>
+                        </div>
+                        <div class="column mr-2">
+                            <div class="has-background-primary mb-2">
+                                <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Monday</h3>
+                            </div>
+                            <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-2"></div>
+                            <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-2"></div>
+                            <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-2"></div>
+                        </div>
+                        <div class="column mr-2">
+                            <div class="has-background-primary mb-2">
+                                <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Tuesday</h3>
+                            </div>
+                            <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-3"></div>
+                            <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-3"></div>
+                            <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-3"></div>
+                        </div>
+                        <div class="column mr-2">
+                            <div class="has-background-primary mb-2">
+                                <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Wednesday</h3>
+                            </div>
+                            <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-4"></div>
+                            <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-4"></div>
+                            <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-4"></div>
+                        </div>
+                        <div class="column mr-2">
+                            <div class="has-background-primary mb-2">
+                                <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Thursday</h3>
+                            </div>
+                            <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-5"></div>
+                            <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-5"></div>
+                            <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-5"></div>
+                        </div>
+                        <div class="column mr-2">
+                            <div class="has-background-primary mb-2">
+                                <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Friday</h3>
+                            </div>
+                            <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-6"></div>
+                            <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-6"></div>
+                            <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-6"></div>
+                        </div>
+                        <div class="column mr-2">
+                            <div class="has-background-primary mb-2">
+                                <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Saturday</h3>
+                            </div>
+                            <div class="box has-background-primary-light p-2 mb-2 recipeInput" id="breakfast-7"></div>
+                            <div class="box has-background-warning-light p-2 mb-2 recipeInput" id="lunch-7"></div>
+                            <div class="box has-background-danger-light p-2 mb-2 recipeInput" id="dinner-7"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Save button space -->
+                <!-- <div class="save">
+                    <button class="button is-secondary is-medium is-fullwidth is-rounded" id="saveBtn">
+                        <span class="icon is-small">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <span>Save Plan</span>
+                    </button>
+                </div> -->
+    </section>
+</div>
+</main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- GSAP TimelineMax CDN for animations -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -68,7 +226,6 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <!-- Our Animation Script -->
 <script src="./assets/scripts/animate.js"></script>
-    <script src="./assets/scripts/save.js"></script>
-    <script src="./assets/scripts/loadallsaves.js"></script>
+<script src="./assets/scripts/loadallsaves.js"></script>
 </body>
 </html>

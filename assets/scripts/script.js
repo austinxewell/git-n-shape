@@ -485,3 +485,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 //fetch data from APIs using for input
+
+
+//button click function
+$(saveBtn).on('click', function(){
+    //array for all of the saved data ever
+    var allSavedData = JSON.parse(localStorage.getItem("saves")) || [];
+    
+    //saves workout data
+
+    workoutArr=[];
+
+    var dayNumber = 1;
+    for(var i =0; i<7; i++){
+        for(var u = 0;u<5;u++){
+            var workingDiv = document.querySelector("#workoutDay"+dayNumber+"-"+u);
+            var workouts = workingDiv.textContent;
+            workoutArr.push(workouts);
+        }
+        dayNumber++;
+    }
+
+    //gets user set name for the save
+    var setName = prompt('enter a name for the save');
+
+    //array for all food items
+    var foodItems = [];
+
+    var eachDayNutEl = document.querySelectorAll('.recipeInput');
+
+    //gets name of food item and puts in in foodItems array
+    eachDayNutEl.forEach(element =>{
+        dailyFood = element.textContent;
+        foodItems.push(dailyFood);
+    });
+
+    //sets name of save and the food items to an object
+    var savedObject= {
+        name: setName,
+        nutrition: foodItems,
+        workout: workoutArr
+    }
+
+    //adds object to main array
+    allSavedData.push(savedObject);
+
+    //adds
+    localStorage.setItem('saves', JSON.stringify(allSavedData));
+})
