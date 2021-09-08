@@ -6,7 +6,8 @@ const navbar = document.querySelector(".navbar");
 const formSpace = document.querySelector(".form-space");
 const introText = document.querySelector("#intro");
 const sloganText = document.querySelector("#slogan");
-const savedDataCol = document.querySelector("#saved-data-column");
+const overlay = document.querySelector(".weekly-workout");;
+console.log(overlay);
 
 const introTL = new TimelineMax();
 
@@ -21,18 +22,18 @@ const introSequence = function() {
     .fromTo(navbar, 1.2, {y: "-100%"}, {y: "0%", ease: Power2.easeInOut}, "-=1")
 }
 
-const SavedPlansTL = new TimelineMax();
+const generateTL = new TimelineMax();
 
-const introSavedSequence = function () {
-    SavedPlansTL.fromTo(savedDataCol, 1.2, {x: "-140%"}, {x: "0%", ease: Power2.easeInOut});
+// generate content animations
+const generatingSequence = function () {
+    generateTL.fromTo(overlay, 10, {opacity: 0}, {opacity: 1});
 }
 
 // click button
 $("#sign-up").click(function() {
     console.log('button');
-
+    
+    generatingSequence();
 })
 
-introSequence();
-
-introSavedSequence();
+// introSequence();

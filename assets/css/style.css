@@ -22,7 +22,7 @@
     z-index: -1;
 }
 
-/* .data-space::after {
+/* .weekly-workout::after {
     content: "Ready for a killer week?";
     font-size: 40px;
     font-family:monospace;
@@ -38,5 +38,4 @@
     border-radius: 5px;
     backdrop-filter: blur(15px);
     transition: all 2s;
-    display: none;
 } */
