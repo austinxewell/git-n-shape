@@ -68,7 +68,6 @@ var workoutDisplayHandler = function(workoutName, dayId, slot) {
 // 
 // 
 
-
 // get calorie value
 var calorieInput = document.getElementById("#calories")
 
