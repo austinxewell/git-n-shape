@@ -23,7 +23,6 @@ function getRandomInt(max) {
 // Listen for workout button click and grab response data
 $("#workOutBtn").on('click', (function() {
     console.log(bodyPart);
-    debugger;
     for (var i = 0; i < 7; i++) {
         const settings = {
             "async": true,
