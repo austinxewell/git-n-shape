@@ -6,16 +6,6 @@ var back = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/back';
 var cardio = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/cardio';
 var chest = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest';
 var shoulders = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/shoulders';
-var counter = 0;
-
-// DOM elements
-var workoutSundayEl = document.querySelector('#workoutSunday');
-var workoutMondayEl = document.querySelector('#workoutMonday');
-var workoutTuesdayEl = document.querySelector('#workoutTuesday');
-var workoutWednesdayEl = document.querySelector('#workoutWednesday');
-var workoutThursdayEl = document.querySelector('#workoutThursday');
-var workoutFridayEl = document.querySelector('#workoutFriday');
-var workoutSaturdayEl = document.querySelector('#workoutSaturday');
 
 // random number generator to pull random response index slot
 function getRandomInt(max) {
@@ -57,15 +47,11 @@ function Sunday() {
                 // grab workout from that random index in array
                 var workoutName = response[random].name;
 
-                // send workoutName and index number to the displayHandler
+                // send workoutName, dayId and index number to the displayHandler
                 displayHandler(workoutName, dayId, i);
+            }
 
-                counter++;
-            }
-            
-            if (counter==5) {
-                Monday();
-            }
+            Monday();
         });
     })
 )};
@@ -97,12 +83,9 @@ function Monday() {
             // send workoutName, dayId and index number to the displayHandler
             displayHandler(workoutName, dayId, i);
 
-            counter++;
         }
 
-        if (counter==10) {
-            Tuesday();
-        }
+        Tuesday();
     });
 }
 
@@ -133,12 +116,9 @@ function Tuesday() {
             // send workoutName, dayId and index number to the displayHandler
             displayHandler(workoutName, dayId, i);
 
-            counter++;
         }
         
-        if (counter==15) {
-            Wednesday();
-        }
+        Wednesday();
     });
 }
 
@@ -169,12 +149,9 @@ function Wednesday() {
             // send workoutName, dayId and index number to the displayHandler
             displayHandler(workoutName, dayId, i);
 
-            counter++;
         }
         
-        if (counter==20) {
-            Thursday();
-        }
+        Thursday();
     });
 }
 
@@ -205,12 +182,9 @@ function Thursday() {
             // send workoutName, dayId and index number to the displayHandler
             displayHandler(workoutName, dayId, i);
 
-            counter++;
         }
         
-        if (counter==25) {
-            Friday();
-        }
+        Friday();
     });
 }
 
@@ -241,12 +215,9 @@ function Friday() {
             // send workoutName, dayId and index number to the displayHandler
             displayHandler(workoutName, dayId, i);
 
-            counter++;
         }
         
-        if (counter==30) {
-            Saturday();
-        }
+        Saturday();
     });
 }
 
@@ -277,7 +248,6 @@ function Saturday() {
             // send workoutName, dayId and index number to the displayHandler
             displayHandler(workoutName, dayId, i);
 
-            counter++;
         }
     });
 }
