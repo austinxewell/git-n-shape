@@ -208,11 +208,11 @@ $("#save-modal-save-btn").click(function() {
     //array for all food items
     var foodItems = [];
 
-    var eachDayNutEl = document.querySelectorAll('.recipe-name');
+    var eachDayNutEl = document.querySelectorAll('.recipeInput');
 
     //gets name of food item and puts in in foodItems array
     eachDayNutEl.forEach(element =>{
-        dailyFood = element.textContent || [];
+        dailyFood = element.innerHTML || [];
         foodItems.push(dailyFood);
     });
 
