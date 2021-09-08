@@ -6,221 +6,70 @@ var back = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/back';
 var cardio = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/cardio';
 var chest = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest';
 var shoulders = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/shoulders';
-var counter = 0;
 
-// DOM elements
-var workoutSundayEl = document.querySelector('#workoutSunday');
-var workoutMondayEl = document.querySelector('#workoutMonday');
-var workoutTuesdayEl = document.querySelector('#workoutTuesday');
-var workoutWednesdayEl = document.querySelector('#workoutWednesday');
-var workoutThursdayEl = document.querySelector('#workoutThursday');
-var workoutFridayEl = document.querySelector('#workoutFriday');
-var workoutSaturdayEl = document.querySelector('#workoutSaturday');
+// set dayId to begin with Sunday(1)
+dayId = 1
 
+// grab user input from body part selector
+var bodyPartSelectorEl = document.getElementById("body-part");
 
-//5 upper legs workouts
-function Sunday() {
-    $("#workOutBtn").on('click', (function () {
+var bodyPart = bodyPartSelectorEl.options[bodyPartSelectorEl.selectedIndex].text;
 
-        var resetWorkout = '';
+// random number generator to pull random response index slot
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 
-        for (i = 0; i < 5; i++) {
-            const settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": upperLegs,
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-                    "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-                }
-            };
-
-            $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
-                workoutSundayEl.innerHTML = resetWorkout;
-                counter++;
-                if (counter==5) {
-                    Monday();
-                }
-            });
-        }
-
-    })
-    )};
-
-    function Monday() {
-
-        var resetWorkout = '';
-
-        for (i = 0; i < 5; i++) {
-            const settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": waist,
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-                    "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-                }
+// Listen for workout button click and grab response data
+$("#workOutBtn").on('click', (function() {
+    console.log(bodyPart);
+    for (var i = 0; i < 7; i++) {
+        const settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/upper%20legs',
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "exercisedb.p.rapidapi.com",
+                "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
             }
-
-            $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
-                workoutMondayEl.innerHTML = resetWorkout;
-                counter++;
-                if (counter==10) {
-                    Tuesday();
-                }
-            });
-        }
-    }
-
-    function Tuesday() {
-
-        var resetWorkout = '';
-
-        for (i = 0; i < 5; i++) {
-            const settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": lowerLegs,
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-                    "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-                }
+        };
+        
+        $.ajax(settings).done(function (response) {
+            for (var i = 0; i < 5; i++) {
+                // generate random number from 0-length of array
+                var random = getRandomInt(response.length);
+                
+                // grab workout from that random index in array
+                var workoutName = response[random].name;
+                
+                // send workoutName, dayId and index number to the displayHandler
+                displayHandler(workoutName, dayId, i);
             }
-
-            $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
-                workoutTuesdayEl.innerHTML = resetWorkout;
-                counter++;
-                if (counter==15) {
-                    Wednesday();
-                }
-            });
-        }
+            
+            dayId++;
+        });
     }
+}));
 
-    function Wednesday() {
+// generate html content to rest inside workout<day>-<slot> divs. Accept workoutName, day ID, and day slot as arguments from api fetch
+var displayHandler = function(workoutName, dayId, slot) {
+    // grab the div by id
+    var workingDiv = document.querySelector("#workoutDay"+dayId+"-"+slot);
 
-        var resetWorkout = '';
+    // insert workoutName as html
+    workingDiv.innerHTML = "<p>"+workoutName+"</p>";
+}
 
-        for (i = 0; i < 5; i++) {
-            const settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": back,
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-                    "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-                }
-            }
+// I BELIEVE THIS IS WHERE NUTRITION SECTION LOGIC BEGINS - TAYLOR
 
-            $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
-                workoutWednesdayEl.innerHTML = resetWorkout;
-                counter++;
-                if (counter==20) {
-                    Thursday();
-                }
-            });
-        }
-    }
-
-    function Thursday() {
-
-        var resetWorkout = '';
-
-        for (i = 0; i < 5; i++) {
-            const settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": cardio,
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-                    "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-                }
-            }
-
-            $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
-                workoutThursdayEl.innerHTML = resetWorkout;
-                counter++;
-                if (counter==25) {
-                    Friday();
-                }
-            });
-        }
-    }
-
-    function Friday() {
-
-        var resetWorkout = '';
-
-        for (i = 0; i < 5; i++) {
-            const settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": chest,
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-                    "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-                }
-            }
-
-            $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
-                workoutFridayEl.innerHTML = resetWorkout;
-                counter++;
-                if (counter==30) {
-                    Saturday();
-                }
-            });
-        }
-    }
-
-    function Saturday() {
-
-        var resetWorkout = '';
-
-        for (i = 0; i < 5; i++) {
-            const settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": shoulders,
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-                    "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-                }
-            }
-
-            $.ajax(settings).done(function (response) { 
-                resetWorkout = resetWorkout + '' + response[i++].name + '<br> <br>';
-                workoutSaturdayEl.innerHTML = resetWorkout;
-                // safety check for nutrition functions
-                counter++;
-                // if (counter==35) {
-//safegaurd for pressing the generate nutrition button too quickly.
-                // }
-            });
-        }
-    }
-
-
-Sunday();
 // get calorie value
 var calorieInput = document.getElementById("#calories")
 
-    //listen for form submit
-    // $( "#workOutBtn" ).click(function() {
+//listen for form submit
+// $( "#workOutBtn" ).click(function() {
     //     const settings = {
-    //         "async": true,
+        //         "async": true,
     //         "crossDomain": true,
     //         "url": waist,
     //         "method": "GET",
