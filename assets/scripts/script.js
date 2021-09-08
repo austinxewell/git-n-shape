@@ -85,9 +85,6 @@ $("#nutriBtn").click(function () {
 
     $.ajax(settings).then(function (response) {
 
-        // reset dayId to begin with 1
-        dayId = 1
-
         // grab recipes list from response
         var recipes = response.recipes;
         console.log(recipes);
