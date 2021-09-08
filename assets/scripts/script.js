@@ -218,4 +218,5 @@ $(saveBtn).on('click', function(){
 
     //adds
     localStorage.setItem('saves', JSON.stringify(allSavedData));
+
 })

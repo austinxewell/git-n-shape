@@ -18,8 +18,8 @@
     align-items: center;
 }
 
-#saved-plans-column {
-    z-index: -1;
+#saved-data-column {
+    z-index: 1;
 }
 
 /* .data-space::after {
