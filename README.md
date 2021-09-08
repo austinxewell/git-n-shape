@@ -36,6 +36,7 @@ https://exercisedb.p.rapidapi.com/
 https://api.spoonacular.com/recipes/
 
 ## Screenshots
+-----------
 
 ![git-n-shape1](https://user-images.githubusercontent.com/86080954/132438873-aa1ce939-5f9d-48b2-9f94-8402d683a5fb.JPG)
 
