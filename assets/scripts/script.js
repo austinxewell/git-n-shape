@@ -7,9 +7,6 @@ var cardio = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/cardio';
 var chest = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest';
 var shoulders = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/shoulders';
 
-// set dayId to begin with Sunday(1)
-dayId = 1
-
 // grab user input from body part selector
 var bodyPartSelectorEl = document.getElementById("body-part");
 
@@ -35,6 +32,9 @@ $("#workOutBtn").on('click', (function() {
             }
         };
         
+        // set dayId to begin with Sunday(1)
+        dayId = 1
+
         $.ajax(settings).done(function (response) {
             for (var i = 0; i < 5; i++) {
                 // generate random number from 0-length of array
