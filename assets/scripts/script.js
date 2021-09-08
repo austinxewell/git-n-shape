@@ -7,260 +7,70 @@ var cardio = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/cardio';
 var chest = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest';
 var shoulders = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/shoulders';
 
+// set dayId to begin with Sunday(1)
+dayId = 1
+
+// grab user input from body part selector
+var bodyPartSelectorEl = document.getElementById("body-part");
+
+var bodyPart = bodyPartSelectorEl.options[bodyPartSelectorEl.selectedIndex].text;
+
 // random number generator to pull random response index slot
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-// generate html content to rest inside workout<day>-<slot> divs. Accept workoutName, day ID, and day slot as arguments from api fetch
-var displayHandler = function(workoutName, dayId, slot) {
-    // grab the div by id
-    var thisDiv = document.querySelector("#workoutDay"+dayId+"-"+slot);
-
-    // insert workoutName as html
-    thisDiv.innerHTML = "<p>"+workoutName+"</p>";
-}
-
-//5 upper legs workouts
-function Sunday() {
-    $("#workOutBtn").on('click', (function () {
-
+// Listen for workout button click and grab response data
+$("#workOutBtn").on('click', (function() {
+    console.log(bodyPart);
+    debugger;
+    for (var i = 0; i < 7; i++) {
         const settings = {
             "async": true,
             "crossDomain": true,
-            "url": upperLegs,
+            "url": 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/upper%20legs',
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "exercisedb.p.rapidapi.com",
                 "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
             }
         };
-
+        
         $.ajax(settings).done(function (response) {
             for (var i = 0; i < 5; i++) {
-                // Sunday id is 1
-                var dayId = 1
-
                 // generate random number from 0-length of array
                 var random = getRandomInt(response.length);
-
+                
                 // grab workout from that random index in array
                 var workoutName = response[random].name;
-
+                
                 // send workoutName, dayId and index number to the displayHandler
                 displayHandler(workoutName, dayId, i);
             }
-
-            Monday();
+            
+            dayId++;
         });
-    })
-)};
-
-function Monday() {
-
-    const settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": waist,
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-            "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-        }
     }
+}));
 
-    $.ajax(settings).done(function (response) { 
-        for (var i = 0; i < 5; i++) {
-            // Monday id is 2
-            var dayId = 2
+// generate html content to rest inside workout<day>-<slot> divs. Accept workoutName, day ID, and day slot as arguments from api fetch
+var displayHandler = function(workoutName, dayId, slot) {
+    // grab the div by id
+    var workingDiv = document.querySelector("#workoutDay"+dayId+"-"+slot);
 
-            // generate random number from 0-length of array
-            var random = getRandomInt(response.length);
-
-            // grab workout from that random index in array
-            var workoutName = response[random].name;
-
-            // send workoutName, dayId and index number to the displayHandler
-            displayHandler(workoutName, dayId, i);
-
-        }
-
-        Tuesday();
-    });
+    // insert workoutName as html
+    workingDiv.innerHTML = "<p>"+workoutName+"</p>";
 }
 
-function Tuesday() {
+// I BELIEVE THIS IS WHERE NUTRITION SECTION LOGIC BEGINS - TAYLOR
 
-    const settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": lowerLegs,
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-            "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-        }
-    }
-
-    $.ajax(settings).done(function (response) { 
-        for (var i = 0; i < 5; i++) {
-            // Tuesday id is 3
-            var dayId = 3
-
-            // generate random number from 0-length of array
-            var random = getRandomInt(response.length);
-
-            // grab workout from that random index in array
-            var workoutName = response[random].name;
-
-            // send workoutName, dayId and index number to the displayHandler
-            displayHandler(workoutName, dayId, i);
-
-        }
-        
-        Wednesday();
-    });
-}
-
-function Wednesday() {
-
-    const settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": back,
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-            "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-        }
-    }
-
-    $.ajax(settings).done(function (response) { 
-        for (var i = 0; i < 5; i++) {
-            // Wednesday id is 4
-            var dayId = 4
-
-            // generate random number from 0-length of array
-            var random = getRandomInt(response.length);
-
-            // grab workout from that random index in array
-            var workoutName = response[random].name;
-
-            // send workoutName, dayId and index number to the displayHandler
-            displayHandler(workoutName, dayId, i);
-
-        }
-        
-        Thursday();
-    });
-}
-
-function Thursday() {
-
-    const settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": cardio,
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-            "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-        }
-    }
-
-    $.ajax(settings).done(function (response) { 
-        for (var i = 0; i < 5; i++) {
-            // Thursday id is 5
-            var dayId = 5
-
-            // generate random number from 0-length of array
-            var random = getRandomInt(response.length);
-
-            // grab workout from that random index in array
-            var workoutName = response[random].name;
-
-            // send workoutName, dayId and index number to the displayHandler
-            displayHandler(workoutName, dayId, i);
-
-        }
-        
-        Friday();
-    });
-}
-
-function Friday() {
-        
-    const settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": chest,
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-            "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-        }
-    }
-
-    $.ajax(settings).done(function (response) { 
-        for (var i = 0; i < 5; i++) {
-            // Friday id is 6
-            var dayId = 6
-
-            // generate random number from 0-length of array
-            var random = getRandomInt(response.length);
-
-            // grab workout from that random index in array
-            var workoutName = response[random].name;
-
-            // send workoutName, dayId and index number to the displayHandler
-            displayHandler(workoutName, dayId, i);
-
-        }
-        
-        Saturday();
-    });
-}
-
-function Saturday() {
-
-    const settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": shoulders,
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-            "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-        }
-    }
-
-    $.ajax(settings).done(function (response) { 
-        for (var i = 0; i < 5; i++) {
-            // Saturday id is 7
-            var dayId = 7
-
-            // generate random number from 0-length of array
-            var random = getRandomInt(response.length);
-
-            // grab workout from that random index in array
-            var workoutName = response[random].name;
-
-            // send workoutName, dayId and index number to the displayHandler
-            displayHandler(workoutName, dayId, i);
-
-        }
-    });
-}
-
-
-Sunday();
 // get calorie value
 var calorieInput = document.getElementById("#calories")
 
-    //listen for form submit
-    // $( "#workOutBtn" ).click(function() {
+//listen for form submit
+// $( "#workOutBtn" ).click(function() {
     //     const settings = {
-    //         "async": true,
+        //         "async": true,
     //         "crossDomain": true,
     //         "url": waist,
     //         "method": "GET",
