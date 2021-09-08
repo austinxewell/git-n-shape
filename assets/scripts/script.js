@@ -44,7 +44,7 @@ $("#workOutBtn").on('click', (function() {
                 var workoutName = response[random].name;
                 
                 // send workoutName, dayId and index number to the displayHandler
-                displayHandler(workoutName, dayId, i);
+                workoutDisplayHandler(workoutName, dayId, i);
             }
             
             dayId++;
@@ -53,7 +53,7 @@ $("#workOutBtn").on('click', (function() {
 }));
 
 // generate html content to rest inside workout<day>-<slot> divs. Accept workoutName, day ID, and day slot as arguments from api fetch
-var displayHandler = function(workoutName, dayId, slot) {
+var workoutDisplayHandler = function(workoutName, dayId, slot) {
     // grab the div by id
     var workingDiv = document.querySelector("#workoutDay"+dayId+"-"+slot);
 
@@ -64,7 +64,7 @@ var displayHandler = function(workoutName, dayId, slot) {
 
 // 
 // 
-// I BELIEVE THIS IS WHERE NUTRITION SECTION LOGIC BEGINS - TAYLOR
+// NUTRITION SECTION LOGIC BEGINS
 // 
 // 
 
@@ -72,6 +72,7 @@ var displayHandler = function(workoutName, dayId, slot) {
 // get calorie value
 var calorieInput = document.getElementById("#calories")
 
+// listen for generate nutrition button 'click', then fetch api to send to display handler
 $("#nutriBtn").click(function () {
 
         // var calories = calorieInput
@@ -85,326 +86,63 @@ $("#nutriBtn").click(function () {
 
     $.ajax(settings).then(function (response) {
 
-        var eachDayNutEl = document.querySelectorAll('.recipeInput');
-        eachDayNutEl.forEach(element => {
-            element.innerHTML='';
-        });
+        // reset dayId to begin with 1
+        dayId = 1
+
+        // grab recipes list from response
         var recipes = response.recipes;
         console.log(recipes);
-        var placement = 0;
-        var mealType = 0;
-        for(var i = 0; i < recipes.length; i++){
-            var title = recipes[i].title+' ';
-            var recipeLink = recipes[i].sourceUrl;
-            if(placement == 0){
-                var containerNut = document.createElement('div');
-                var actualRecipe = document.createElement('a');
-                var breakfastDivEl = document.querySelector('#breakfast-1');
-                var lunchDivEl = document.querySelector('#lunch-1');
-                var dinnerDivEl = document.querySelector('#dinner-1');
-                //create Meal type element
-                if (mealType == 0){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    breakfastDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    breakfastDivEl.appendChild(containerNut);
-                } else if (mealType ==1){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    lunchDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    lunchDivEl.appendChild(containerNut);
-                } else if (mealType == 2){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    dinnerDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    dinnerDivEl.appendChild(containerNut);
-                }
-                //increase placement counter to move to next column
-                placement++
-            } else if (placement == 1) {
-                var containerNut = document.createElement('div');
-                var actualRecipe = document.createElement('a');
-                var breakfastDivEl = document.querySelector('#breakfast-2');
-                var lunchDivEl = document.querySelector('#lunch-2');
-                var dinnerDivEl = document.querySelector('#dinner-2');
-                //create Meal type element
-                if (mealType == 0){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    breakfastDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    breakfastDivEl.appendChild(containerNut);
-                } else if (mealType ==1){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    lunchDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    lunchDivEl.appendChild(containerNut);
-                } else if (mealType == 2){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    dinnerDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    dinnerDivEl.appendChild(containerNut);
-                }
-                //increase placement counter to move to next column
-                placement++
-            } else if (placement == 2) {
-                var containerNut = document.createElement('div');
-                var actualRecipe = document.createElement('a');
-                var breakfastDivEl = document.querySelector('#breakfast-3');
-                var lunchDivEl = document.querySelector('#lunch-3');
-                var dinnerDivEl = document.querySelector('#dinner-3');
-                //create Meal type element
-                if (mealType == 0){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    breakfastDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    breakfastDivEl.appendChild(containerNut);
-                } else if (mealType ==1){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    lunchDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    lunchDivEl.appendChild(containerNut);
-                } else if (mealType == 2){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    dinnerDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    dinnerDivEl.appendChild(containerNut);
-                }
-                //increase placement counter to move to next column
-                placement++
-            } else if (placement == 3) {
-                var containerNut = document.createElement('div');
-                var actualRecipe = document.createElement('a');
-                var breakfastDivEl = document.querySelector('#breakfast-4');
-                var lunchDivEl = document.querySelector('#lunch-4');
-                var dinnerDivEl = document.querySelector('#dinner-4');
-                //create Meal type element
-                if (mealType == 0){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    breakfastDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    breakfastDivEl.appendChild(containerNut);
-                } else if (mealType ==1){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    lunchDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    lunchDivEl.appendChild(containerNut);
-                } else if (mealType == 2){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    dinnerDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    dinnerDivEl.appendChild(containerNut);
-                }
-                //increase placement counter to move to next column
-                placement++
-            } else if (placement == 4) {
-                var containerNut = document.createElement('div');
-                var actualRecipe = document.createElement('a');
-                var breakfastDivEl = document.querySelector('#breakfast-5');
-                var lunchDivEl = document.querySelector('#lunch-5');
-                var dinnerDivEl = document.querySelector('#dinner-5');
-                //create Meal type element
-                if (mealType == 0){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    breakfastDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    breakfastDivEl.appendChild(containerNut);
-                } else if (mealType ==1){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    lunchDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    lunchDivEl.appendChild(containerNut);
-                } else if (mealType == 2){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    dinnerDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    dinnerDivEl.appendChild(containerNut);
-                }
-                //increase placement counter to move to next column
-                placement++
-            } else if (placement == 5) {
-                var containerNut = document.createElement('div');
-                var actualRecipe = document.createElement('a');
-                var breakfastDivEl = document.querySelector('#breakfast-6');
-                var lunchDivEl = document.querySelector('#lunch-6');
-                var dinnerDivEl = document.querySelector('#dinner-6');
-                //create Meal type element
-                if (mealType == 0){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    breakfastDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    breakfastDivEl.appendChild(containerNut);
-                } else if (mealType ==1){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    lunchDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    lunchDivEl.appendChild(containerNut);
-                } else if (mealType == 2){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    dinnerDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    dinnerDivEl.appendChild(containerNut);
-                }
-                //increase placement counter to move to next column
-                placement++
-            } else if (placement == 6) {
-                var containerNut = document.createElement('div');
-                var actualRecipe = document.createElement('a');
-                var breakfastDivEl = document.querySelector('#breakfast-7');
-                var lunchDivEl = document.querySelector('#lunch-7');
-                var dinnerDivEl = document.querySelector('#dinner-7');
-                //create Meal type element
-                if (mealType == 0){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Breakfast: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    breakfastDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    breakfastDivEl.appendChild(containerNut);
-                } else if (mealType ==1){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Lunch: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    lunchDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    lunchDivEl.appendChild(containerNut);
-                } else if (mealType == 2){
-                    var mealName = document.createElement('h2');
-                    mealName.textContent='Dinner: '
-                    mealName.classList.add("has-text-weight-semibold");
-                    dinnerDivEl.appendChild(mealName);
-                    //append random recipe as a link
-                    actualRecipe.setAttribute('href', recipeLink);
-                    actualRecipe.setAttribute('target', '_blank');
-                    actualRecipe.textContent = title;
-                    containerNut.appendChild(actualRecipe);
-                    dinnerDivEl.appendChild(containerNut);
-                }
-                //reset placement counter to go back to first coloumn
-                placement = 0;
-                //increase meal type so next set of recipies fall under the next meal type
-                mealType++;
-                
-            }
-        }
         
+        for(var i = 0; i < recipes.length; i++){
+
+            // grab recipe name
+            var recipeName = recipes[i].title;
+
+            // grab recipe link
+            var recipeLink = recipes[i].sourceUrl;
+
+            // send info to recipe display handler
+            recipeDisplayHandler(recipeName, recipeLink, i)
+        }
     });
 });
+
+// Use a counter to assign meal of the day
+var counter = 1
+
+// generate html content to rest inside recipe<number> divs. Accept recipeName, recipeLink, and number as arguments from api fetch
+var recipeDisplayHandler = function(recipeName, recipeLink, number) {
+
+    // grab the div by id
+    var workingDiv = document.querySelector("#recipe"+number);
+
+    // if counter gets too high (4), reset it
+    if (counter == 4) {
+        counter = 1
+    }
+
+    // check for meal of the day (breakfast)
+    if (counter === 1) {
+        // name the meal breakfast
+        // insert recipe info as html
+        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Breakfast:</h2><a href="+recipeLink+">"+recipeName+"</a>";
+    }
+    // (lunch)
+    else if (counter === 2) {
+        // name the meal lunch
+        // insert recipe info as html
+        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Lunch:</h2><a href="+recipeLink+">"+recipeName+"</a>";
+    }
+    // (dinner)
+    else if (counter === 3) {
+        // name the meal dinner
+        // insert recipe info as html
+        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Dinner:</h2><a href="+recipeLink+">"+recipeName+"</a>";
+    }
+
+    // increment counter
+    counter++
+};
 
 // bulma logic for mobile navbar toggle animation
 document.addEventListener('DOMContentLoaded', () => {
@@ -432,46 +170,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// get calorie value
+var calorieInput = document.getElementById("#calories")
 
 
-
-    // get calorie value
-    var calorieInput = document.getElementById("#calories")
-
-    $("#nutriBtn").submit(function () {
-        // var calories = calorieInput
-        var numberRecipe = 21;
-
-        const settings = {
-
-            "url": `https://api.spoonacular.com/recipes/complexSearch?query=paleo&number=${numberRecipe}&addRecipeInformation=true&addRecipeNutrition=true&apiKey=21fc282010dd4a55b9f7abe8cc4b3058`,
-            "method": "GET",
-
-        };
-
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-            for (var i = 0; i < 5; i++) {
-                // generate random number to identify make recipe selection random
-                var randomRecipe = Math.floor(Math.random() * numberRecipe);
-
-                // store title recipe inside variable
-                // var recipeTitle = response.results[randomRecipe].title
-                var recipeTitle = response.results[randomRecipe].nutrition.nutrients[0].amount
-                // create card for this recipe
-
-                // add recipe title to card title
-
-                // append card to HTML
-                console.log(recipeTitle)
-            }
-        });
-    });
-
-//fetch data from APIs using for input
+// 
+// 
+// SAVE BUTTON LOGIC BEGINS
+// 
+// 
 
 
-//button click function
+//save button click function
 $(saveBtn).on('click', function(){
     //array for all of the saved data ever
     var allSavedData = JSON.parse(localStorage.getItem("saves")) || [];
@@ -490,7 +200,7 @@ $(saveBtn).on('click', function(){
         dayNumber++;
     }
 
-    //gets user set name for the save
+    //gets user to set name for the save
     var setName = prompt('enter a name for the save');
 
     //array for all food items
