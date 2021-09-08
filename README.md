@@ -19,11 +19,6 @@ CSS
 
 JavaScript
 
-<<<<<<< HEAD
-
-## Links
----------
-=======
 Bulma Framework
 
 Gsap
@@ -31,8 +26,6 @@ Gsap
 
 ## Links
 ------------
-
->>>>>>> feature/readme
 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
 https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css
@@ -43,26 +36,15 @@ https://exercisedb.p.rapidapi.com/
 https://api.spoonacular.com/recipes/
 
 ## Screenshots
-<<<<<<< HEAD
------------
-
-=======
-------------------
->>>>>>> feature/readme
 
 ![git-n-shape1](https://user-images.githubusercontent.com/86080954/132438873-aa1ce939-5f9d-48b2-9f94-8402d683a5fb.JPG)
 
 ![git-n-shape2](https://user-images.githubusercontent.com/86080954/132438886-6a2209e3-4c12-4a2f-80b8-87ba1bbd9d46.JPG)
 
-<<<<<<< HEAD
-## Deployed Website
-------------
-=======
 ![git-n-shape3](https://user-images.githubusercontent.com/86080954/132438914-e56f4e44-c46e-41a4-a531-d66d27a15e22.JPG)
 
 
 ## Deployed Website
 ---------------------
 
->>>>>>> feature/readme
 https://austinxewell.github.io/git-n-shape/
