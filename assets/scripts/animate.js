@@ -26,5 +26,4 @@ $("#sign-up").click(function() {
 
 })
 
-
 introSequence();

@@ -7,9 +7,6 @@ var cardio = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/cardio';
 var chest = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest';
 var shoulders = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/shoulders';
 
-// set dayId to begin with Sunday(1)
-dayId = 1
-
 // grab user input from body part selector
 // var bodyPartSelectorEl = document.getElementById("body-part");
 
@@ -39,6 +36,9 @@ $("#workOutBtn").on('click', (function(event) {
             }
         };
         
+        // set dayId to begin with Sunday(1)
+        dayId = 1
+
         $.ajax(settings).done(function (response) {
             for (var i = 0; i < 5; i++) {
                 // generate random number from 0-length of array
@@ -131,19 +131,19 @@ var recipeDisplayHandler = function(recipeName, recipeLink, number) {
     if (counter === 1) {
         // name the meal breakfast
         // insert recipe info as html
-        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Breakfast:</h2><a target='_blank' href="+recipeLink+">"+recipeName+"</a>";
+        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Breakfast:</h2><a class='recipe-name' target='_blank' href="+recipeLink+">"+recipeName+"</a>";
     }
     // (lunch)
     else if (counter === 2) {
         // name the meal lunch
         // insert recipe info as html
-        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Lunch:</h2><a target='_blank' href="+recipeLink+">"+recipeName+"</a>";
+        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Lunch:</h2><a class='recipe-name' target='_blank' href="+recipeLink+">"+recipeName+"</a>";
     }
     // (dinner)
     else if (counter === 3) {
         // name the meal dinner
         // insert recipe info as html
-        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Dinner:</h2><a target='_blank' href="+recipeLink+">"+recipeName+"</a>";
+        workingDiv.innerHTML = "<h2 class='has-text-weight-semibold'>Dinner:</h2><a class='recipe-name' target='_blank' href="+recipeLink+">"+recipeName+"</a>";
     }
 
     // increment counter
@@ -185,25 +185,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //save button click function
 $(saveBtn).on('click', function(){
+    
+    // opens modal to request setName
+    $("#save-modal").toggleClass("is-active");
+})
+
+// modal save button closes modal and runs save function
+$("#save-modal-save-btn").click(function() {
+    $("#save-modal").toggleClass("is-active");
+
+    $("#confirmation-modal").toggleClass("is-active");
+
     //array for all of the saved data ever
     var allSavedData = JSON.parse(localStorage.getItem("saves")) || [];
-    
+
+    var setName = $("#plan-name").val().trim();
+
     //saves workout data
 
     workoutArr=[];
 
     var dayNumber = 1;
-    for(var i =0; i<7; i++){
+    for(var i =0; i<5; i++){
         for(var u = 0;u<5;u++){
             var workingDiv = document.querySelector("#workoutDay"+dayNumber+"-"+u);
-            var workouts = workingDiv.textContent;
+            var workouts = workingDiv.textContent || [];
             workoutArr.push(workouts);
         }
         dayNumber++;
     }
-
-    //gets user to set name for the save
-    var setName = prompt('enter a name for the save');
 
     //array for all food items
     var foodItems = [];
@@ -212,7 +222,7 @@ $(saveBtn).on('click', function(){
 
     //gets name of food item and puts in in foodItems array
     eachDayNutEl.forEach(element =>{
-        dailyFood = element.textContent;
+        dailyFood = element.innerHTML || [];
         foodItems.push(dailyFood);
     });
 
@@ -228,4 +238,33 @@ $(saveBtn).on('click', function(){
 
     //adds
     localStorage.setItem('saves', JSON.stringify(allSavedData));
+
+})
+
+// save modal cancel button click
+$("#save-modal-cancel-btn").click(function() {
+
+    // close modal
+    $("#save-modal").toggleClass("is-active");
+})
+
+// confirm modal cancel button click
+$("#confirmation-modal-return-home-button").click(function() {
+
+    // close modal
+    $("#confirmation-modal").toggleClass("is-active");
+})
+
+//save modal delete button click
+$("#save-modal-delete-btn").click(function() {
+
+    // close modal
+    $("#save-modal").toggleClass("is-active");
+})
+
+//confirmation modal delete button click
+$("#confirmation-modal-delete-btn").click(function() {
+
+    // close modal
+    $("#confirmation-modal").toggleClass("is-active");
 })

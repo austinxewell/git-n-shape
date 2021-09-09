@@ -18,8 +18,8 @@
     align-items: center;
 }
 
-.form-space {
-    /* height: 600px; */
+#saved-data-column {
+    z-index: 1;
 }
 
 /* .data-space::after {
