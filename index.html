@@ -71,22 +71,35 @@
                         <div class="control mb-3">
                             <div class="select is-rounded is-primary">
                                 <select name="body-part" id="body-part">
-                                    <option value="" disabled selected>Full Body</option>
+                                    <option value="" selected id="none">None</option>
+                                    <option value="back">Back</option>
                                     <option value="waist">Waist</option>
+                                    <option value="upper%20legs">Upper Legs</option>
+                                    <option value="lower%20legs">Lower Legs</option>
+                                    <option value="chest">Chest</option>
+                                    <option value="cardio">Cardio</option>
                                 </select>
                             </div>
                         </div>
-                        
+                        <button class="workOutBtn button is-primary mb-5" id="workOutBtn">Generate Workout</button>
                     </form>
-                    <button class="workOutBtn button is-primary mb-5" id="workOutBtn">Generate Workout</button>
+                    
                     <!-- Form for nutrition -->
-                    <form action="" class="nutrition field">
-                        <label class="label" for="calories">Set your calorie goal:</label>
+                    <form action="" class="workout field mb-5">
+                        <label class="label" for="nutri-select">Select dietary options:</label>
                         <div class="control mb-3">
-                            <input class="input is-rounded is-primary" name="calories" type="text" placeholder="2,000">
+                            <div class="select is-rounded is-primary">
+                                <select name="nutri-select" id="nutri-select">
+                                    <option value="" selected id="">None</option>
+                                    <option value="gluten%20free">Gluten Free</option>
+                                    <option value="dairy%20free">Dairy Free</option>
+                                    <option value="vegan">Vegan</option>
+                                    <option value="vegetarian">Vegetarian</option>
+                                </select>
+                            </div>
                         </div>
+                        <button class="nutriBtn button is-primary mb-5" id="nutriBtn">Generate meal plan</button>
                     </form>
-                    <button class="nutriBtn button is-primary mb-5" id="nutriBtn">Generate Nutrition</button>
                 </div>
             </section>
 

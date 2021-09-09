@@ -11,26 +11,30 @@ var shoulders = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/shoulders'
 dayId = 1
 
 // grab user input from body part selector
-var bodyPartSelectorEl = document.getElementById("body-part");
+// var bodyPartSelectorEl = document.getElementById("body-part");
 
-var bodyPart = bodyPartSelectorEl.options[bodyPartSelectorEl.selectedIndex].text;
-
+// var bodyPart = bodyPartSelectorEl.options[bodyPartSelectorEl.selectedIndex].text;
+var bodyTarget = $("#body-part").val();
+console.log(bodyTarget)
 // random number generator to pull random response index slot
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
 // Listen for workout button click and grab response data
-$("#workOutBtn").on('click', (function() {
-    console.log(bodyPart);
+$("#workOutBtn").on('click', (function(event) {
+    event.preventDefault();
+    console.log(bodyTarget);
     for (var i = 0; i < 5; i++) {
+
         const settings = {
             "async": true,
             "crossDomain": true,
-            "url": 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/upper%20legs',
+            "url": 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/waist',
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "exercisedb.p.rapidapi.com",
+               // "bodyPart": "bodyTarget",
                 "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
             }
         };
@@ -67,23 +71,29 @@ var workoutDisplayHandler = function(workoutName, dayId, slot) {
 // NUTRITION SECTION LOGIC BEGINS
 // 
 // 
-
-// get calorie value
-var calorieInput = document.getElementById("#calories")
-
 // listen for generate nutrition button 'click', then fetch api to send to display handler
-$("#nutriBtn").click(function () {
+$("#nutriBtn").click(function (event) {
+    event.preventDefault();
+    // get value of the dropdown menu
+    var nutriInput = $("#nutri-select").val();
+    console.log(nutriInput);
+    // inserts TAG options for diet
+    let nutriURL = "https://api.spoonacular.com/recipes/random?number=21&tags=" + nutriInput + "&addRecipeInformation=true&addRecipeNutrition=true&apiKey=21fc282010dd4a55b9f7abe8cc4b3058"
 
-        // var calories = calorieInput
+console.log(nutriURL);
 
-    const settings = {
+    // var settings = {
+        
+    // "url": 'https://api.spoonacular.com/recipes/random?number=21&tags=" + nutriInput + "&addRecipeInformation=true&addRecipeNutrition=true&apiKey=21fc282010dd4a55b9f7abe8cc4b3058',
+    //     "method": "GET",
 
-        "url": `https://api.spoonacular.com/recipes/random?number=21&addRecipeInformation=true&addRecipeNutrition=true&apiKey=21fc282010dd4a55b9f7abe8cc4b3058`,
-        "method": "GET",
 
-    };
 
-    $.ajax(settings).then(function (response) {
+    // };
+//console.log(settings)
+
+
+    $.ajax(nutriURL).then(function (response) {
 
         // grab recipes list from response
         var recipes = response.recipes;
