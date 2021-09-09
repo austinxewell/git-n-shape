@@ -7,13 +7,6 @@ var cardio = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/cardio';
 var chest = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest';
 var shoulders = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/shoulders';
 
-// grab user input from body part selector
-// var bodyPartSelectorEl = document.getElementById("body-part");
-
-// var bodyPart = bodyPartSelectorEl.options[bodyPartSelectorEl.selectedIndex].text;
-var bodyTarget = $("#body-part").val();
-console.log(bodyTarget)
-// random number generator to pull random response index slot
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
@@ -21,20 +14,24 @@ function getRandomInt(max) {
 // Listen for workout button click and grab response data
 $("#workOutBtn").on('click', (function(event) {
     event.preventDefault();
-    console.log(bodyTarget);
+    
     for (var i = 0; i < 5; i++) {
+        // GETS workout drop down menu options 
+        var bodyTarget = $("#body-part").val();
+        console.log(bodyTarget);
 
         const settings = {
             "async": true,
             "crossDomain": true,
-            "url": 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/waist',
+            "url": 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/' + bodyTarget,
             "method": "GET",
             "headers": {
-                "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-               // "bodyPart": "bodyTarget",
-                "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a"
-            }
+                "x-rapidapi-host": "exercisedb.p.rapidapi.com",                
+                "x-rapidapi-key": "de8e14ca10msh892e42abbcd4964p12db82jsnbc1393fd740a",
+
+            }            
         };
+        console.log(settings)
         
         // set dayId to begin with Sunday(1)
         dayId = 1
