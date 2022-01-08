@@ -54,64 +54,25 @@
     <!--Overall container-->
     <main class="container mt-5">
 
+        <!-- title bar -->
+        <div class="columns">
+            <div id="plan-title-space" class="column is-four-fifths mr-3 mb-3 box">
+                    <h1 id="plan-title" class="title has-text-centered"></h1>
+            </div>
+            <div id="plan-title-space" class="column is-one-fifth mr-3 mb-3">
+        </div>
+        </div>
+
         <!-- set main columns -->
         <div class="columns is-3-widescreen">
 
-            <!--Form column -->
-            <section class="column box is-one-fifth form-space p-5">
-                <div class="form">
-                    <!-- Form Header -->
-                    <div class="container">
-                        <h1 class="title">We'll handle the hard stuff.</h1>
-                        <h2 class="subtitle mb-5">Generate a random weekly plan here:</h2>
-                    </div>
-                    <!-- Form for workout -->
-                    <div class="workout field mb-5">
-                        <label class="label" for="body-part">Target a body part:</label>
-                        <div class="control mb-3">
-                            <div class="select is-rounded is-primary">
-                                <select name="body-part" id="body-part">
-                                    
-                                    <option value="back" selected id="">Back</option>
-                                    <option value="waist">Waist</option>
-                                    <option value="upper%20legs">Upper Legs</option>
-                                    <option value="lower%20legs">Lower Legs</option>
-                                    <option value="chest">Chest</option>
-                                    <option value="cardio">Cardio</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button class="workOutBtn button is-primary mb-5" id="workOutBtn">Generate Workout</button>
-                    </form>
-                    
-                    <!-- Form for nutrition -->
-                    <form action="" class="workout field mb-5">
-                        <label class="label" for="nutri-select">Select dietary options:</label>
-                        <div class="control mb-3">
-                            <div class="select is-rounded is-primary">
-                                <select name="nutri-select" id="nutri-select">
-                                    <option value="" selected id="">None</option>
-                                    <option value="gluten%20free">Gluten Free</option>
-                                    <option value="dairy%20free">Dairy Free</option>
-                                    <option value="vegan">Vegan</option>
-                                    <option value="vegetarian">Vegetarian</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button class="nutriBtn button is-primary mb-5" id="nutriBtn">Generate meal plan</button>
-                    </form>
-                </div>
-            </section>
-
             <!-- Data Column -->
-            <section id="overlay" class="column box ml-3 has-background-primary-dark data-space">
+            <section id="saved-data-column" class="column is-four-fifths box mr-3 has-background-primary-dark data-space">
 
                 <!-- Space for the workout plan -->
                 <h2 class="title has-text-white">Workouts:</h2>
-                <div class="box container ">
+                <div class="box container">
                     <div class="columns weekly-workout">
-                        <!--DAILY COLUMNS WILL BE CREATED AND PUT HERE
-                            IN JAVASCRIPT-->
                             <div class="column mr-2">
                                 <div class="has-background-primary mb-2">
                                     <h3 class="p-1 subtitle has-text-weight-bold has-text-centered">Monday</h3>
@@ -229,35 +190,17 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Save button space -->
-                        <div class="save">
-                            <button class="button is-secondary is-medium is-fullwidth is-rounded" id="saveBtn">
-                                <span class="icon is-small">
-                                    <i class="fas fa-check"></i>
-                                </span>
-                                <span>Save Plan</span>
-                            </button>
-                        </div>
             </section>
-        </div>
 
-        <!-- Save Modal -->
-        <div id="save-modal" class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Enter a name for your fitness plan:</p>
-                <button id="save-modal-delete-btn" class="delete" aria-label="close"></button>
-            </header>
-            <section class="modal-card-body">
-                <input id="plan-name" type="text" class="is-full-width input">
+            <!--Plans list column -->
+            <section id="saved-plans-column" class="column box is-one-fifth">
+                <h1 class="subtitle has-text-centered">My Saved Plans:</h1>
+                <div id="button-container">
+                </div>
+                <button id="clear-btn" class="mb-2 button is-fullwidth is-danger is-light">
+                    Delete All Saved Plans
+                </button>
             </section>
-            <footer class="modal-card-foot">
-                    <button id="save-modal-save-btn" class="button is-primary">Save Plan</button>
-                <button id="save-modal-cancel-btn" class="button">Cancel</button>
-            </footer>
-            </div>
         </div>
 
         <!-- Confirmation Modal -->
@@ -265,24 +208,16 @@
             <div class="modal-background"></div>
             <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Plan Saved!</p>
-                <button id="confirmation-modal-delete-btn" class="delete" aria-label="close"></button>
+                <p class="modal-card-title">WAIT! Proceeding will delete all of your fitness plans.</p>
+                <button id="confirmation-modal-exit-btn" class="delete" aria-label="close"></button>
             </header>
             <footer class="modal-card-foot">
-                <a href="./allsaved.html">
-                    <button id="confirmation-modal-go-to-button" class="button is-primary">Go to My Plans</button>
-                </a>
-                <button id="confirmation-modal-return-home-button" class="button ml-3">Return home</button>
+                <button id="confirmation-modal-return-button" class="button is-primary">Return to safety</button>
+                <button id="confirmation-modal-delete-button" class="button ml-2">Delete all plans</button>
             </footer>
             </div>
         </div>
     </main>
-
-<!-- intro screen -->
-<div id="introScreen">
-    <h1 id="intro" class="title">Welcome to Git N Shape</h1>
-    <h2 id="slogan" class="subtitle mt-2">Fitness starts here.</h2>
-</div>  
 
 <!-- GSAP TweenMax CDN for animations -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -290,9 +225,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- jQuery CDN -->
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-<!-- Our Main Script -->
-<script src="assets/scripts/script.js"></script>
 <!-- Our Animation Script -->
-<script src="./assets/scripts/animate.js"></script>
+<script src="./assets/scripts/animatesaves.js"></script>
+<!-- Our load saves script -->
+<script src="./assets/scripts/loadallsaves.js"></script>
 </body>
 </html>
