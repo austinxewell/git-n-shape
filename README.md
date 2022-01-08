@@ -10,6 +10,10 @@ Git-N-Shape will also take out the hassle of figuring out which meals you should
 
 Once you have your plans generated you will have the option to save and compare your plans. This functionality will help you track which workouts you like, what meals you enjoy, and the progress you have accomplished over your Git-N-Shape journey.
 
+ Some of the technologies used in this project include HTML, Javascript, CSS, Bulma framework, Gsap animation, ExerciseDB, Spoonacular/recipes
+
+
+
 ## Built With
 ----------
 
