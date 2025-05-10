@@ -87,21 +87,18 @@ Open index.html in your preferred browser.
 
 ## 👨‍💻 Contributors
 
+**Taylor Hakes**  
+Web Developer | Contributor of **Git-N-Shape**  
+🔗 [GitHub](https://github.com/SadboiTay)
+**Michael Heinhold**  
+Web Developer | Contributor of **Git-N-Shape**  
+🔗 [GitHub](https://github.com/michaelheinhold)
 **Austin Ewell**  
 Web Developer | Contributor of **Git-N-Shape**  
 🔗 [GitHub](https://github.com/austinxewell)
-
-**Austin Ewell**  
+**CorySlsbry**  
 Web Developer | Contributor of **Git-N-Shape**  
-🔗 [GitHub](https://github.com/austinxewell)
-
-**Austin Ewell**  
-Web Developer | Contributor of **Git-N-Shape**  
-🔗 [GitHub](https://github.com/austinxewell)
-
-**Austin Ewell**  
-Web Developer | Contributor of **Git-N-Shape**  
-🔗 [GitHub](https://github.com/austinxewell)
+🔗 [GitHub](https://github.com/CorySlsbry)
 
 ---
 
