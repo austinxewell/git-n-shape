@@ -1,11 +1,6 @@
 # Git-N-Shape
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c540926f-e116-40fe-8bde-80de7e977eff/deploy-status)](https://austinxewell.github.io/git-n-shape/)  
-![HTML](https://img.shields.io/badge/HTML-5-orange?style=flat-square&logo=html5&logoColor=white)  
-![CSS](https://img.shields.io/badge/CSS-3-blue?style=flat-square&logo=css3&logoColor=white)  
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=flat-square&logo=javascript)  
-![Bulma](https://img.shields.io/badge/Bulma-CSS-green?style=flat-square&logo=bulma)  
-![GSAP](https://img.shields.io/badge/GSAP-Animations-black?style=flat-square&logo=greensock)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c540926f-e116-40fe-8bde-80de7e977eff/deploy-status)](https://austinxewell.github.io/git-n-shape/)  ![HTML](https://img.shields.io/badge/HTML-5-orange?style=flat-square&logo=html5&logoColor=white)  ![CSS](https://img.shields.io/badge/CSS-3-blue?style=flat-square&logo=css3&logoColor=white)  ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=flat-square&logo=javascript)  ![Bulma](https://img.shields.io/badge/Bulma-CSS-green?style=flat-square&logo=bulma)  ![GSAP](https://img.shields.io/badge/GSAP-Animations-black?style=flat-square&logo=greensock)
 
 > A web-based fitness and nutrition generator that builds your workout and meal plan in seconds.
 
