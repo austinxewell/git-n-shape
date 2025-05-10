@@ -90,12 +90,15 @@ Open index.html in your preferred browser.
 **Taylor Hakes**  
 Web Developer | Contributor of **Git-N-Shape**  
 🔗 [GitHub](https://github.com/SadboiTay)
+
 **Michael Heinhold**  
 Web Developer | Contributor of **Git-N-Shape**  
 🔗 [GitHub](https://github.com/michaelheinhold)
+
 **Austin Ewell**  
 Web Developer | Contributor of **Git-N-Shape**  
 🔗 [GitHub](https://github.com/austinxewell)
+
 **CorySlsbry**  
 Web Developer | Contributor of **Git-N-Shape**  
 🔗 [GitHub](https://github.com/CorySlsbry)
